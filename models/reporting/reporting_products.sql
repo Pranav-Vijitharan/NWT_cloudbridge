@@ -1,54 +1,54 @@
 SELECT
 --from order_details
 
-od.OrderID,
-od.ProductID,
-od.UnitPrice,
-Quantity,
-Discount,
+od.orderID,
+od.productID,
+od.unitPrice,
+quantity,
+discount,
 netPrice,
 revenue,
 discountAmount,
 
 --from orders
 
-OrderDate,
-RequiredDate,
-ShippedDate,
-ShipVia,
-Freight,
-ShipName,
-ShipCity AS city,
-ShipRegion AS region,
-ShipCountry AS country,
+orderDate,
+requiredDate,
+shippedDate,
+shipVia,
+freight,
+shipName,
+shipCity AS city,
+shipRegion AS region,
+shipCountry AS country,
 onTimeStatus,
 orderDuration,
 shippingDelay,
 shippingTime,
 -- Profit & Profit Margin Calculation
-(od.REVENUE - od.DISCOUNTAMOUNT - o.FREIGHT) AS profit,
-(od.REVENUE - od.DISCOUNTAMOUNT - o.FREIGHT) / od.REVENUE * 100 AS profitMargin,
+(od.revenue - od.discountAmount - o.freight) AS profit,
+(od.revenue - od.discountAmount - o.freight) / od.revenue * 100 AS profitMargin,
 
 --from products
 
-ProductName,
-pro.CategoryID,
+productName,
+pro.categoryID,
 pro.supplierID,
-UnitsinStock,
-UnitsOnOrder,
-ReorderLevel,
-Discontinued,
-TotalStockValue,
-TotalOrderValue,
-TotalValue,
-ValuePerUnit,
-ReorderCheck,
+unitsinStock,
+unitsOnOrder,
+reorderLevel,
+discontinued,
+totalStockValue,
+totalOrderValue,
+totalValue,
+valuePerUnit,
+reorderCheck,
 
 --from category
 
-CategoryName,
-Description AS categoryDescription,
-Picture AS categoryPicture,
+categoryName,
+description AS categoryDescription,
+picture AS categoryPicture,
 
 -- from supplier
 
