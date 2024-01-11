@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: reporting_customer
+    columns:
+      - name: orderid
+        tests:
+          - unique
+          - not_null
+      - name: shipmode
+        tests:
+          - accepted_values:
+              values:
+                - "First Class"
+                - "Same Day"
+                - "Second Class"
+                - "Standard Class"

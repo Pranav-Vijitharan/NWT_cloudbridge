@@ -1,0 +1,795 @@
+[0m00:34:24.237635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C38352CF10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C383502910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C38301D750>]}
+
+
+============================== 00:34:24.243594 | 67ec56cc-581b-46e3-af3b-7e7094ad782d ==============================
+[0m00:34:24.243594 [info ] [MainThread]: Running with dbt=1.5.9
+[0m00:34:24.244633 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m00:34:25.343081 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '67ec56cc-581b-46e3-af3b-7e7094ad782d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C38352D4D0>]}
+[0m00:34:25.358964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '67ec56cc-581b-46e3-af3b-7e7094ad782d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C38411AB10>]}
+[0m00:34:25.362961 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m00:34:25.400918 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m00:34:25.402911 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m00:34:25.405050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '67ec56cc-581b-46e3-af3b-7e7094ad782d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C38415D5D0>]}
+[0m00:34:28.558104 [debug] [MainThread]: 1699: static parser successfully parsed raw\raw_customer.sql
+[0m00:34:28.630709 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.NWT_cloudbridge.example
+[0m00:34:28.649040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '67ec56cc-581b-46e3-af3b-7e7094ad782d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C38418B610>]}
+[0m00:34:28.663162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '67ec56cc-581b-46e3-af3b-7e7094ad782d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C384235A90>]}
+[0m00:34:28.665719 [info ] [MainThread]: Found 1 model, 0 tests, 0 snapshots, 0 analyses, 325 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m00:34:28.667167 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '67ec56cc-581b-46e3-af3b-7e7094ad782d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C3FF559010>]}
+[0m00:34:28.670250 [info ] [MainThread]: 
+[0m00:34:28.673177 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:34:28.676757 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1'
+[0m00:34:28.726127 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1"
+[0m00:34:28.728111 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:34:28.730111 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:34:34.648132 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:34:34.649132 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m00:34:34.650132 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m00:34:34.650132 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m00:34:34.651134 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: No close available on handle
+[0m00:34:34.652134 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:34:34.653133 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1' was properly closed.
+[0m00:34:34.653133 [info ] [MainThread]: 
+[0m00:34:34.655711 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 5.98 seconds (5.98s).
+[0m00:34:34.656983 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "NWT_DATA_GRP1"
+  Database Error
+    250001: Could not connect to Snowflake backend after 2 attempt(s).Aborting
+[0m00:34:34.657939 [debug] [MainThread]: Command `dbt run` failed at 00:34:34.657939 after 10.51 seconds
+[0m00:34:34.659025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C382DC8CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C3841C8450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C383508F90>]}
+[0m00:34:34.659935 [debug] [MainThread]: Flushing usage events
+[0m00:45:10.919939 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CC0761910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CC0732910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CC0732B50>]}
+
+
+============================== 00:45:10.926474 | fb9f9242-f103-4cb9-bd1d-8325255d5d2f ==============================
+[0m00:45:10.926474 [info ] [MainThread]: Running with dbt=1.5.9
+[0m00:45:10.928474 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m00:45:11.396033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fb9f9242-f103-4cb9-bd1d-8325255d5d2f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CC076EC10>]}
+[0m00:45:11.411974 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fb9f9242-f103-4cb9-bd1d-8325255d5d2f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CC1347610>]}
+[0m00:45:11.413975 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m00:45:11.439886 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m00:45:11.516535 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:45:11.517539 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:45:11.518538 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.NWT_cloudbridge.example
+[0m00:45:11.525043 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fb9f9242-f103-4cb9-bd1d-8325255d5d2f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CC14451D0>]}
+[0m00:45:11.534676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fb9f9242-f103-4cb9-bd1d-8325255d5d2f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CC13A4A90>]}
+[0m00:45:11.535703 [info ] [MainThread]: Found 1 model, 0 tests, 0 snapshots, 0 analyses, 325 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m00:45:11.536702 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fb9f9242-f103-4cb9-bd1d-8325255d5d2f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CBC7D92D0>]}
+[0m00:45:11.539706 [info ] [MainThread]: 
+[0m00:45:11.542705 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:45:11.546238 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1'
+[0m00:45:11.578000 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1"
+[0m00:45:11.579012 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:45:11.580003 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:45:16.768150 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:45:16.769149 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m00:45:16.770150 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m00:45:16.771149 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m00:45:16.773150 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: No close available on handle
+[0m00:45:16.774803 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:45:16.775802 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1' was properly closed.
+[0m00:45:16.776801 [info ] [MainThread]: 
+[0m00:45:16.777804 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 5.23 seconds (5.23s).
+[0m00:45:16.778804 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "NWT_DATA_GRP1"
+  Database Error
+    250001: Could not connect to Snowflake backend after 2 attempt(s).Aborting
+[0m00:45:16.780849 [debug] [MainThread]: Command `dbt run` failed at 00:45:16.779844 after 5.93 seconds
+[0m00:45:16.780849 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CC0739310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CC0056D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017CBB7258D0>]}
+[0m00:45:16.781847 [debug] [MainThread]: Flushing usage events
+[0m00:47:58.304789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164AD921AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164AE0C3F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164AE0F1510>]}
+
+
+============================== 00:47:58.311815 | 84bb6757-dcaf-42e5-a1df-c1cb3034a76e ==============================
+[0m00:47:58.311815 [info ] [MainThread]: Running with dbt=1.5.9
+[0m00:47:58.312812 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m00:47:58.739650 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '84bb6757-dcaf-42e5-a1df-c1cb3034a76e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164AEC51750>]}
+[0m00:47:58.761568 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '84bb6757-dcaf-42e5-a1df-c1cb3034a76e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164ADD34690>]}
+[0m00:47:58.765070 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m00:47:58.781019 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m00:47:58.857304 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:47:58.858304 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:47:58.859303 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.NWT_cloudbridge.example
+[0m00:47:58.866952 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '84bb6757-dcaf-42e5-a1df-c1cb3034a76e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164AE106D50>]}
+[0m00:47:58.878871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '84bb6757-dcaf-42e5-a1df-c1cb3034a76e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164AED34A10>]}
+[0m00:47:58.880871 [info ] [MainThread]: Found 1 model, 0 tests, 0 snapshots, 0 analyses, 325 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m00:47:58.881872 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '84bb6757-dcaf-42e5-a1df-c1cb3034a76e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164AA159190>]}
+[0m00:47:58.883698 [info ] [MainThread]: 
+[0m00:47:58.886740 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:47:58.890973 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1'
+[0m00:47:58.921838 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1"
+[0m00:47:58.922849 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:47:58.923847 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:48:03.978868 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:48:03.979866 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m00:48:03.980866 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m00:48:03.980866 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m00:48:03.981870 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: No close available on handle
+[0m00:48:03.982866 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:48:03.983866 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1' was properly closed.
+[0m00:48:03.983866 [info ] [MainThread]: 
+[0m00:48:03.985893 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 5.10 seconds (5.10s).
+[0m00:48:03.987004 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "NWT_DATA_GRP1"
+  Database Error
+    250001: Could not connect to Snowflake backend after 2 attempt(s).Aborting
+[0m00:48:03.989954 [debug] [MainThread]: Command `dbt run` failed at 00:48:03.988948 after 5.76 seconds
+[0m00:48:03.989954 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164AE0C98D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164AEE78690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000164AEDB9D50>]}
+[0m00:48:03.990938 [debug] [MainThread]: Flushing usage events
+[0m00:48:36.291910 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D44C3E5210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D44C3D2690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D44C3E4C90>]}
+
+
+============================== 00:48:36.298582 | 36974321-8796-4ac3-ab56-7ad4ab7804ad ==============================
+[0m00:48:36.298582 [info ] [MainThread]: Running with dbt=1.5.9
+[0m00:48:36.299541 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m00:48:36.300536 [info ] [MainThread]: dbt version: 1.5.9
+[0m00:48:36.302520 [info ] [MainThread]: python version: 3.11.5
+[0m00:48:36.303519 [info ] [MainThread]: python path: C:\Pranav\Anaconda\envs\ADO_ASG2\python.exe
+[0m00:48:36.305028 [info ] [MainThread]: os info: Windows-10-10.0.22635-SP0
+[0m00:48:36.307090 [info ] [MainThread]: Using profiles.yml file at C:\Users\prana\.dbt\profiles.yml
+[0m00:48:36.308441 [info ] [MainThread]: Using dbt_project.yml file at C:\Program Files\Dbt_Snowflake\NWT_cloudbridge\dbt_project.yml
+[0m00:48:36.309795 [info ] [MainThread]: Configuration:
+[0m00:48:36.771901 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:48:36.799082 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m00:48:36.800074 [info ] [MainThread]: Required dependencies:
+[0m00:48:36.802010 [debug] [MainThread]: Executing "git --help"
+[0m00:48:36.928704 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:48:36.929704 [debug] [MainThread]: STDERR: "b''"
+[0m00:48:36.930704 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:48:36.931704 [info ] [MainThread]: Connection:
+[0m00:48:36.932707 [info ] [MainThread]:   account: RNTCKZM.SD52215
+[0m00:48:36.934767 [info ] [MainThread]:   user: PRANAV
+[0m00:48:36.936093 [info ] [MainThread]:   database: NWT_DATA_GRP1
+[0m00:48:36.937125 [info ] [MainThread]:   schema: ADO_GRP1_ASG2
+[0m00:48:36.939096 [info ] [MainThread]:   warehouse: ADO_GRP1_ASG2
+[0m00:48:36.941096 [info ] [MainThread]:   role: accountadmin
+[0m00:48:36.942096 [info ] [MainThread]:   client_session_keep_alive: False
+[0m00:48:36.943096 [info ] [MainThread]:   query_tag: None
+[0m00:48:36.946353 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m00:48:36.948626 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m00:48:36.949624 [debug] [MainThread]: Using snowflake connection "debug"
+[0m00:48:36.950647 [debug] [MainThread]: On debug: select 1 as id
+[0m00:48:36.950647 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:48:42.005585 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m00:48:42.006632 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m00:48:42.007657 [debug] [MainThread]: On debug: No close available on handle
+[0m00:48:42.008588 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m00:48:42.009588 [info ] [MainThread]: [31m1 check failed:[0m
+[0m00:48:42.010653 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250001: Could not connect to Snowflake backend after 2 attempt(s).Aborting
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m00:48:42.015149 [debug] [MainThread]: Command `dbt debug` failed at 00:48:42.013587 after 5.78 seconds
+[0m00:48:42.015655 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m00:48:42.016659 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D44C3B93D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D44CFBE2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D44C3B1850>]}
+[0m00:48:42.017662 [debug] [MainThread]: Flushing usage events
+[0m00:52:13.684963 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252927C9F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025294B626D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025294B62290>]}
+
+
+============================== 00:52:13.692376 | 20864e53-71ca-40d8-972b-3398e355d774 ==============================
+[0m00:52:13.692376 [info ] [MainThread]: Running with dbt=1.5.9
+[0m00:52:13.693317 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m00:52:13.694824 [info ] [MainThread]: dbt version: 1.5.9
+[0m00:52:13.695848 [info ] [MainThread]: python version: 3.11.5
+[0m00:52:13.695848 [info ] [MainThread]: python path: C:\Pranav\Anaconda\envs\ADO_ASG2\python.exe
+[0m00:52:13.697160 [info ] [MainThread]: os info: Windows-10-10.0.22635-SP0
+[0m00:52:13.698114 [info ] [MainThread]: Using profiles.yml file at C:\Users\prana\.dbt\profiles.yml
+[0m00:52:13.700111 [info ] [MainThread]: Using dbt_project.yml file at C:\Program Files\Dbt_Snowflake\NWT_cloudbridge\dbt_project.yml
+[0m00:52:13.701112 [info ] [MainThread]: Configuration:
+[0m00:52:14.157840 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:52:14.189221 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m00:52:14.190221 [info ] [MainThread]: Required dependencies:
+[0m00:52:14.192222 [debug] [MainThread]: Executing "git --help"
+[0m00:52:14.342366 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:52:14.343366 [debug] [MainThread]: STDERR: "b''"
+[0m00:52:14.343366 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:52:14.344877 [info ] [MainThread]: Connection:
+[0m00:52:14.345917 [info ] [MainThread]:   account: rntckzm-sd52215
+[0m00:52:14.347337 [info ] [MainThread]:   user: PRANAV
+[0m00:52:14.348333 [info ] [MainThread]:   database: NWT_DATA_GRP1
+[0m00:52:14.349336 [info ] [MainThread]:   schema: ADO_GRP1_ASG2
+[0m00:52:14.350335 [info ] [MainThread]:   warehouse: ADO_GRP1_ASG2
+[0m00:52:14.351334 [info ] [MainThread]:   role: accountadmin
+[0m00:52:14.352336 [info ] [MainThread]:   client_session_keep_alive: False
+[0m00:52:14.354845 [info ] [MainThread]:   query_tag: None
+[0m00:52:14.357874 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m00:52:14.358873 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m00:52:14.359878 [debug] [MainThread]: Using snowflake connection "debug"
+[0m00:52:14.360873 [debug] [MainThread]: On debug: select 1 as id
+[0m00:52:14.361874 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:52:15.145623 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m00:52:15.146688 [debug] [MainThread]: On debug: Close
+[0m00:52:15.222057 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:52:15.223076 [info ] [MainThread]: [32mAll checks passed![0m
+[0m00:52:15.225056 [debug] [MainThread]: Command `dbt debug` succeeded at 00:52:15.225056 after 1.61 seconds
+[0m00:52:15.226110 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m00:52:15.226110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002528FB958D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002528FB95610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252957D0D90>]}
+[0m00:52:15.227111 [debug] [MainThread]: Flushing usage events
+[0m00:54:33.774943 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B79D1D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B79D0ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B79D15D0>]}
+
+
+============================== 00:54:33.781903 | 079a06de-a7ec-48ab-a997-ddb82fdb46e3 ==============================
+[0m00:54:33.781903 [info ] [MainThread]: Running with dbt=1.5.9
+[0m00:54:33.783909 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m00:54:34.276583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '079a06de-a7ec-48ab-a997-ddb82fdb46e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B79C3910>]}
+[0m00:54:34.302367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '079a06de-a7ec-48ab-a997-ddb82fdb46e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B85B6F90>]}
+[0m00:54:34.305907 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m00:54:34.334293 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m00:54:34.350158 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m00:54:34.352160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '079a06de-a7ec-48ab-a997-ddb82fdb46e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B85B6AD0>]}
+[0m00:54:35.241222 [debug] [MainThread]: 1699: static parser successfully parsed raw\raw_customer.sql
+[0m00:54:35.302743 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.NWT_cloudbridge.example
+[0m00:54:35.312597 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '079a06de-a7ec-48ab-a997-ddb82fdb46e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B8696250>]}
+[0m00:54:35.320198 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '079a06de-a7ec-48ab-a997-ddb82fdb46e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B8622350>]}
+[0m00:54:35.321199 [info ] [MainThread]: Found 1 model, 0 tests, 0 snapshots, 0 analyses, 325 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m00:54:35.323425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '079a06de-a7ec-48ab-a997-ddb82fdb46e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B3A49110>]}
+[0m00:54:35.324931 [info ] [MainThread]: 
+[0m00:54:35.326001 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:54:35.329280 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1'
+[0m00:54:35.347581 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1"
+[0m00:54:35.347581 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:54:35.348524 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:54:36.092385 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.0 seconds
+[0m00:54:36.093382 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: Close
+[0m00:54:36.143335 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2'
+[0m00:54:36.151924 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"
+[0m00:54:36.152911 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"} */
+show terse objects in NWT_DATA_GRP1.ADO_GRP1_ASG2
+[0m00:54:36.152911 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:54:36.775159 [debug] [ThreadPool]: SQL status: SUCCESS 13 in 1.0 seconds
+[0m00:54:36.777678 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: Close
+[0m00:54:36.831719 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '079a06de-a7ec-48ab-a997-ddb82fdb46e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B85317D0>]}
+[0m00:54:36.833719 [info ] [MainThread]: Concurrency: 6 threads (target='dev')
+[0m00:54:36.835289 [info ] [MainThread]: 
+[0m00:54:36.849391 [debug] [Thread-1 (]: Began running node model.NWT_cloudbridge.raw_customer
+[0m00:54:36.850399 [info ] [Thread-1 (]: 1 of 1 START sql table model ADO_GRP1_ASG2.raw_customer ........................ [RUN]
+[0m00:54:36.852391 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.NWT_cloudbridge.raw_customer'
+[0m00:54:36.853444 [debug] [Thread-1 (]: Began compiling node model.NWT_cloudbridge.raw_customer
+[0m00:54:36.865991 [debug] [Thread-1 (]: Writing injected SQL for node "model.NWT_cloudbridge.raw_customer"
+[0m00:54:36.869415 [debug] [Thread-1 (]: Timing info for model.NWT_cloudbridge.raw_customer (compile): 00:54:36.853444 => 00:54:36.868430
+[0m00:54:36.870415 [debug] [Thread-1 (]: Began executing node model.NWT_cloudbridge.raw_customer
+[0m00:54:36.917840 [debug] [Thread-1 (]: Writing runtime sql for node "model.NWT_cloudbridge.raw_customer"
+[0m00:54:36.922839 [debug] [Thread-1 (]: Using snowflake connection "model.NWT_cloudbridge.raw_customer"
+[0m00:54:36.923840 [debug] [Thread-1 (]: On model.NWT_cloudbridge.raw_customer: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "node_id": "model.NWT_cloudbridge.raw_customer"} */
+create or replace transient table NWT_DATA_GRP1.ADO_GRP1_ASG2.raw_customer
+         as
+        (
+
+select *
+from 
+NWT_DATA_GRP1.ADO_GRP1_ASG2.CUSTOMER
+        );
+[0m00:54:36.925351 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m00:54:38.460931 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m00:54:38.486704 [debug] [Thread-1 (]: Timing info for model.NWT_cloudbridge.raw_customer (execute): 00:54:36.871422 => 00:54:38.486704
+[0m00:54:38.487643 [debug] [Thread-1 (]: On model.NWT_cloudbridge.raw_customer: Close
+[0m00:54:38.545218 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '079a06de-a7ec-48ab-a997-ddb82fdb46e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B8850850>]}
+[0m00:54:38.546246 [info ] [Thread-1 (]: 1 of 1 OK created sql table model ADO_GRP1_ASG2.raw_customer ................... [[32mSUCCESS 1[0m in 1.69s]
+[0m00:54:38.548242 [debug] [Thread-1 (]: Finished running node model.NWT_cloudbridge.raw_customer
+[0m00:54:38.550219 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:54:38.551218 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1' was properly closed.
+[0m00:54:38.552218 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2' was properly closed.
+[0m00:54:38.552218 [debug] [MainThread]: Connection 'model.NWT_cloudbridge.raw_customer' was properly closed.
+[0m00:54:38.553219 [info ] [MainThread]: 
+[0m00:54:38.554228 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 3.23 seconds (3.23s).
+[0m00:54:38.557143 [debug] [MainThread]: Command end result
+[0m00:54:38.564142 [info ] [MainThread]: 
+[0m00:54:38.566700 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:54:38.567703 [info ] [MainThread]: 
+[0m00:54:38.568723 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m00:54:38.571188 [debug] [MainThread]: Command `dbt run` succeeded at 00:54:38.569705 after 4.86 seconds
+[0m00:54:38.573192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B28AFC10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B2935A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C1B29359D0>]}
+[0m00:54:38.574193 [debug] [MainThread]: Flushing usage events
+[0m00:57:58.393696 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163248D5410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163248C2690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163248D5150>]}
+
+
+============================== 00:57:58.401335 | 75c682d1-977a-4e0e-bb64-b3c8ea9f7f5a ==============================
+[0m00:57:58.401335 [info ] [MainThread]: Running with dbt=1.5.9
+[0m00:57:58.402321 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m00:57:58.893749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '75c682d1-977a-4e0e-bb64-b3c8ea9f7f5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163248A21D0>]}
+[0m00:57:58.910124 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '75c682d1-977a-4e0e-bb64-b3c8ea9f7f5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163248E41D0>]}
+[0m00:57:58.912122 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m00:57:58.928178 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m00:57:59.002274 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m00:57:59.002274 [debug] [MainThread]: Partial parsing: added file: NWT_cloudbridge://models\raw\raw_employee_territory.sql
+[0m00:57:59.030071 [debug] [MainThread]: 1699: static parser successfully parsed raw\raw_employee_territory.sql
+[0m00:57:59.050170 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.NWT_cloudbridge.example
+[0m00:57:59.057703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '75c682d1-977a-4e0e-bb64-b3c8ea9f7f5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163254BB1D0>]}
+[0m00:57:59.065776 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '75c682d1-977a-4e0e-bb64-b3c8ea9f7f5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016325677550>]}
+[0m00:57:59.066778 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 325 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m00:57:59.067785 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '75c682d1-977a-4e0e-bb64-b3c8ea9f7f5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016320949190>]}
+[0m00:57:59.070784 [info ] [MainThread]: 
+[0m00:57:59.072781 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:57:59.077334 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1'
+[0m00:57:59.100470 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1"
+[0m00:57:59.101473 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:57:59.102484 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:57:59.768284 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.0 seconds
+[0m00:57:59.770256 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: Close
+[0m00:57:59.816493 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2'
+[0m00:57:59.825120 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"
+[0m00:57:59.826117 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"} */
+show terse objects in NWT_DATA_GRP1.ADO_GRP1_ASG2
+[0m00:57:59.826117 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:58:00.420403 [debug] [ThreadPool]: SQL status: SUCCESS 18 in 1.0 seconds
+[0m00:58:00.423402 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: Close
+[0m00:58:00.473826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '75c682d1-977a-4e0e-bb64-b3c8ea9f7f5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163254E61D0>]}
+[0m00:58:00.475534 [info ] [MainThread]: Concurrency: 6 threads (target='dev')
+[0m00:58:00.477531 [info ] [MainThread]: 
+[0m00:58:00.488915 [debug] [Thread-1 (]: Began running node model.NWT_cloudbridge.raw_employee_territory
+[0m00:58:00.489851 [info ] [Thread-1 (]: 1 of 1 START sql table model ADO_GRP1_ASG2.raw_employee_territory .............. [RUN]
+[0m00:58:00.492213 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.NWT_cloudbridge.raw_employee_territory'
+[0m00:58:00.493216 [debug] [Thread-1 (]: Began compiling node model.NWT_cloudbridge.raw_employee_territory
+[0m00:58:00.503536 [debug] [Thread-1 (]: Writing injected SQL for node "model.NWT_cloudbridge.raw_employee_territory"
+[0m00:58:00.506184 [debug] [Thread-1 (]: Timing info for model.NWT_cloudbridge.raw_employee_territory (compile): 00:58:00.493216 => 00:58:00.505181
+[0m00:58:00.507190 [debug] [Thread-1 (]: Began executing node model.NWT_cloudbridge.raw_employee_territory
+[0m00:58:00.554995 [debug] [Thread-1 (]: Writing runtime sql for node "model.NWT_cloudbridge.raw_employee_territory"
+[0m00:58:00.557528 [debug] [Thread-1 (]: Using snowflake connection "model.NWT_cloudbridge.raw_employee_territory"
+[0m00:58:00.558597 [debug] [Thread-1 (]: On model.NWT_cloudbridge.raw_employee_territory: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "node_id": "model.NWT_cloudbridge.raw_employee_territory"} */
+create or replace transient table NWT_DATA_GRP1.ADO_GRP1_ASG2.raw_employee_territory
+         as
+        (
+
+select *
+from 
+NWT_DATA_GRP1.ADO_GRP1_ASG2.EMPLOYEETERRITORIES
+        );
+[0m00:58:00.559563 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m00:58:01.625129 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m00:58:01.649584 [debug] [Thread-1 (]: Timing info for model.NWT_cloudbridge.raw_employee_territory (execute): 00:58:00.508237 => 00:58:01.649584
+[0m00:58:01.649584 [debug] [Thread-1 (]: On model.NWT_cloudbridge.raw_employee_territory: Close
+[0m00:58:01.777348 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '75c682d1-977a-4e0e-bb64-b3c8ea9f7f5a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163254DB450>]}
+[0m00:58:01.779304 [info ] [Thread-1 (]: 1 of 1 OK created sql table model ADO_GRP1_ASG2.raw_employee_territory ......... [[32mSUCCESS 1[0m in 1.29s]
+[0m00:58:01.781302 [debug] [Thread-1 (]: Finished running node model.NWT_cloudbridge.raw_employee_territory
+[0m00:58:01.784303 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:58:01.784303 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1' was properly closed.
+[0m00:58:01.785307 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2' was properly closed.
+[0m00:58:01.785307 [debug] [MainThread]: Connection 'model.NWT_cloudbridge.raw_employee_territory' was properly closed.
+[0m00:58:01.786587 [info ] [MainThread]: 
+[0m00:58:01.787587 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 2.71 seconds (2.71s).
+[0m00:58:01.790586 [debug] [MainThread]: Command end result
+[0m00:58:01.799236 [info ] [MainThread]: 
+[0m00:58:01.800232 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:58:01.802340 [info ] [MainThread]: 
+[0m00:58:01.803232 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m00:58:01.805235 [debug] [MainThread]: Command `dbt run` succeeded at 00:58:01.805235 after 3.47 seconds
+[0m00:58:01.806686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163248DFBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163248DFF90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001631F8D6910>]}
+[0m00:58:01.807675 [debug] [MainThread]: Flushing usage events
+[0m01:01:00.987878 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ABAB113D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ABAB11610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ABAB11310>]}
+
+
+============================== 01:01:00.993344 | c2db82d8-b47a-4ddc-9e50-076d03c3a78c ==============================
+[0m01:01:00.993344 [info ] [MainThread]: Running with dbt=1.5.9
+[0m01:01:00.995849 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m01:01:01.482541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c2db82d8-b47a-4ddc-9e50-076d03c3a78c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ABAB1BE90>]}
+[0m01:01:01.501629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c2db82d8-b47a-4ddc-9e50-076d03c3a78c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ABB717690>]}
+[0m01:01:01.503637 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m01:01:01.520648 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m01:01:01.605780 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m01:01:01.607274 [debug] [MainThread]: Partial parsing: added file: NWT_cloudbridge://models\raw\raw_territory.sql
+[0m01:01:01.635842 [debug] [MainThread]: 1699: static parser successfully parsed raw\raw_territory.sql
+[0m01:01:01.656313 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.NWT_cloudbridge.example
+[0m01:01:01.669388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c2db82d8-b47a-4ddc-9e50-076d03c3a78c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ABB85BF50>]}
+[0m01:01:01.679799 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c2db82d8-b47a-4ddc-9e50-076d03c3a78c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ABB8B74D0>]}
+[0m01:01:01.680801 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 325 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m01:01:01.681799 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c2db82d8-b47a-4ddc-9e50-076d03c3a78c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AB6B89190>]}
+[0m01:01:01.683798 [info ] [MainThread]: 
+[0m01:01:01.685392 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m01:01:01.689396 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1'
+[0m01:01:01.706007 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1"
+[0m01:01:01.706007 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m01:01:01.707007 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:01:02.417057 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.0 seconds
+[0m01:01:02.418059 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: Close
+[0m01:01:02.483369 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2'
+[0m01:01:02.490879 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"
+[0m01:01:02.492385 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"} */
+show terse objects in NWT_DATA_GRP1.ADO_GRP1_ASG2
+[0m01:01:02.492385 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:01:03.135453 [debug] [ThreadPool]: SQL status: SUCCESS 19 in 1.0 seconds
+[0m01:01:03.137522 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: Close
+[0m01:01:03.196530 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c2db82d8-b47a-4ddc-9e50-076d03c3a78c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ABA1FC890>]}
+[0m01:01:03.197528 [info ] [MainThread]: Concurrency: 6 threads (target='dev')
+[0m01:01:03.199529 [info ] [MainThread]: 
+[0m01:01:03.212152 [debug] [Thread-1 (]: Began running node model.NWT_cloudbridge.raw_territory
+[0m01:01:03.214163 [info ] [Thread-1 (]: 1 of 1 START sql table model ADO_GRP1_ASG2.raw_territory ....................... [RUN]
+[0m01:01:03.215154 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.NWT_cloudbridge.raw_territory'
+[0m01:01:03.216571 [debug] [Thread-1 (]: Began compiling node model.NWT_cloudbridge.raw_territory
+[0m01:01:03.227159 [debug] [Thread-1 (]: Writing injected SQL for node "model.NWT_cloudbridge.raw_territory"
+[0m01:01:03.229162 [debug] [Thread-1 (]: Timing info for model.NWT_cloudbridge.raw_territory (compile): 01:01:03.217509 => 01:01:03.228163
+[0m01:01:03.230161 [debug] [Thread-1 (]: Began executing node model.NWT_cloudbridge.raw_territory
+[0m01:01:03.285987 [debug] [Thread-1 (]: Writing runtime sql for node "model.NWT_cloudbridge.raw_territory"
+[0m01:01:03.287999 [debug] [Thread-1 (]: Using snowflake connection "model.NWT_cloudbridge.raw_territory"
+[0m01:01:03.288997 [debug] [Thread-1 (]: On model.NWT_cloudbridge.raw_territory: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "node_id": "model.NWT_cloudbridge.raw_territory"} */
+create or replace transient table NWT_DATA_GRP1.ADO_GRP1_ASG2.raw_territory
+         as
+        (
+
+select *
+from 
+NWT_DATA_GRP1.ADO_GRP1_ASG2.TERRITORIES
+        );
+[0m01:01:03.288997 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m01:01:04.604325 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m01:01:04.633330 [debug] [Thread-1 (]: Timing info for model.NWT_cloudbridge.raw_territory (execute): 01:01:03.231203 => 01:01:04.632398
+[0m01:01:04.633330 [debug] [Thread-1 (]: On model.NWT_cloudbridge.raw_territory: Close
+[0m01:01:04.777454 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c2db82d8-b47a-4ddc-9e50-076d03c3a78c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ABB890150>]}
+[0m01:01:04.779458 [info ] [Thread-1 (]: 1 of 1 OK created sql table model ADO_GRP1_ASG2.raw_territory .................. [[32mSUCCESS 1[0m in 1.56s]
+[0m01:01:04.781463 [debug] [Thread-1 (]: Finished running node model.NWT_cloudbridge.raw_territory
+[0m01:01:04.783458 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:01:04.784457 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1' was properly closed.
+[0m01:01:04.784457 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2' was properly closed.
+[0m01:01:04.784457 [debug] [MainThread]: Connection 'model.NWT_cloudbridge.raw_territory' was properly closed.
+[0m01:01:04.785979 [info ] [MainThread]: 
+[0m01:01:04.787248 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 3.10 seconds (3.10s).
+[0m01:01:04.789755 [debug] [MainThread]: Command end result
+[0m01:01:04.799964 [info ] [MainThread]: 
+[0m01:01:04.800942 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m01:01:04.801941 [info ] [MainThread]: 
+[0m01:01:04.803943 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m01:01:04.805604 [debug] [MainThread]: Command `dbt run` succeeded at 01:01:04.805604 after 3.87 seconds
+[0m01:01:04.805604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ABA2F3DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AB5A7FC10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AB5B057D0>]}
+[0m01:01:04.806606 [debug] [MainThread]: Flushing usage events
+[0m21:13:04.331765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B75F3150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B75D3F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B75F2BD0>]}
+
+
+============================== 21:13:04.338763 | 86d059fd-a209-4971-83bc-7c5d487c23e4 ==============================
+[0m21:13:04.338763 [info ] [MainThread]: Running with dbt=1.5.9
+[0m21:13:04.339763 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m21:13:05.082106 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '86d059fd-a209-4971-83bc-7c5d487c23e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B81D9F10>]}
+[0m21:13:05.103744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '86d059fd-a209-4971-83bc-7c5d487c23e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B81F9CD0>]}
+[0m21:13:05.105708 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m21:13:05.126248 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m21:13:05.856706 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 0 files changed.
+[0m21:13:05.856706 [debug] [MainThread]: Partial parsing: added file: NWT_cloudbridge://models\raw\raw_region.sql
+[0m21:13:05.857686 [debug] [MainThread]: Partial parsing: deleted file: NWT_cloudbridge://models\raw\raw_employee_territory.sql
+[0m21:13:05.885649 [debug] [MainThread]: 1699: static parser successfully parsed raw\raw_region.sql
+[0m21:13:05.908715 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.NWT_cloudbridge.example
+[0m21:13:05.919100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '86d059fd-a209-4971-83bc-7c5d487c23e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B82A1490>]}
+[0m21:13:05.933103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '86d059fd-a209-4971-83bc-7c5d487c23e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B83A3590>]}
+[0m21:13:05.935101 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 325 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m21:13:05.936100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '86d059fd-a209-4971-83bc-7c5d487c23e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B3669910>]}
+[0m21:13:05.938568 [info ] [MainThread]: 
+[0m21:13:05.940577 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m21:13:05.945139 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1'
+[0m21:13:05.963146 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1"
+[0m21:13:05.964147 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m21:13:05.965149 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:13:07.697161 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 2.0 seconds
+[0m21:13:07.698161 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: Close
+[0m21:13:07.756704 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2'
+[0m21:13:07.764775 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"
+[0m21:13:07.765701 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"} */
+show terse objects in NWT_DATA_GRP1.ADO_GRP1_ASG2
+[0m21:13:07.765701 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:13:08.304812 [debug] [ThreadPool]: SQL status: SUCCESS 20 in 1.0 seconds
+[0m21:13:08.307858 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: Close
+[0m21:13:08.362362 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '86d059fd-a209-4971-83bc-7c5d487c23e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B760AD90>]}
+[0m21:13:08.364337 [info ] [MainThread]: Concurrency: 6 threads (target='dev')
+[0m21:13:08.365339 [info ] [MainThread]: 
+[0m21:13:08.378343 [debug] [Thread-1 (]: Began running node model.NWT_cloudbridge.raw_region
+[0m21:13:08.380354 [info ] [Thread-1 (]: 1 of 1 START sql table model ADO_GRP1_ASG2.raw_region .......................... [RUN]
+[0m21:13:08.382339 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.NWT_cloudbridge.raw_region'
+[0m21:13:08.382339 [debug] [Thread-1 (]: Began compiling node model.NWT_cloudbridge.raw_region
+[0m21:13:08.393338 [debug] [Thread-1 (]: Writing injected SQL for node "model.NWT_cloudbridge.raw_region"
+[0m21:13:08.398337 [debug] [Thread-1 (]: Timing info for model.NWT_cloudbridge.raw_region (compile): 21:13:08.383339 => 21:13:08.396348
+[0m21:13:08.398337 [debug] [Thread-1 (]: Began executing node model.NWT_cloudbridge.raw_region
+[0m21:13:08.463233 [debug] [Thread-1 (]: Writing runtime sql for node "model.NWT_cloudbridge.raw_region"
+[0m21:13:08.465230 [debug] [Thread-1 (]: Using snowflake connection "model.NWT_cloudbridge.raw_region"
+[0m21:13:08.466234 [debug] [Thread-1 (]: On model.NWT_cloudbridge.raw_region: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "node_id": "model.NWT_cloudbridge.raw_region"} */
+create or replace transient table NWT_DATA_GRP1.ADO_GRP1_ASG2.raw_region
+         as
+        (
+
+select *
+from 
+NWT_DATA_GRP1.ADO_GRP1_ASG2.REGION
+        );
+[0m21:13:08.467230 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m21:13:11.026192 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 3.0 seconds
+[0m21:13:11.053212 [debug] [Thread-1 (]: Timing info for model.NWT_cloudbridge.raw_region (execute): 21:13:08.399481 => 21:13:11.052205
+[0m21:13:11.053212 [debug] [Thread-1 (]: On model.NWT_cloudbridge.raw_region: Close
+[0m21:13:11.102151 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '86d059fd-a209-4971-83bc-7c5d487c23e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B83A1550>]}
+[0m21:13:11.104151 [info ] [Thread-1 (]: 1 of 1 OK created sql table model ADO_GRP1_ASG2.raw_region ..................... [[32mSUCCESS 1[0m in 2.72s]
+[0m21:13:11.105177 [debug] [Thread-1 (]: Finished running node model.NWT_cloudbridge.raw_region
+[0m21:13:11.108208 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:13:11.109269 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1' was properly closed.
+[0m21:13:11.110213 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2' was properly closed.
+[0m21:13:11.111213 [debug] [MainThread]: Connection 'model.NWT_cloudbridge.raw_region' was properly closed.
+[0m21:13:11.111213 [info ] [MainThread]: 
+[0m21:13:11.112284 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.17 seconds (5.17s).
+[0m21:13:11.114247 [debug] [MainThread]: Command end result
+[0m21:13:11.122214 [info ] [MainThread]: 
+[0m21:13:11.123748 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:13:11.124770 [info ] [MainThread]: 
+[0m21:13:11.126762 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m21:13:11.128770 [debug] [MainThread]: Command `dbt run` succeeded at 21:13:11.128770 after 6.96 seconds
+[0m21:13:11.129752 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B2546AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B2555A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193B2555A50>]}
+[0m21:13:11.130752 [debug] [MainThread]: Flushing usage events
+[0m00:24:30.167515 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB1A432C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB1A442310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB1A441B50>]}
+
+
+============================== 00:24:30.175167 | fceb71f5-03b7-48f3-b485-aedcfb23f181 ==============================
+[0m00:24:30.175167 [info ] [MainThread]: Running with dbt=1.5.9
+[0m00:24:30.177131 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m00:24:30.945349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fceb71f5-03b7-48f3-b485-aedcfb23f181', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB1A441350>]}
+[0m00:24:30.961385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fceb71f5-03b7-48f3-b485-aedcfb23f181', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB1B03A5D0>]}
+[0m00:24:30.964340 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m00:24:30.989975 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m00:24:31.007973 [info ] [MainThread]: Unable to do partial parsing because a project dependency has been added
+[0m00:24:31.008984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fceb71f5-03b7-48f3-b485-aedcfb23f181', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB1B037E10>]}
+[0m00:24:32.322969 [debug] [MainThread]: 1699: static parser successfully parsed raw\raw_customer.sql
+[0m00:24:32.341969 [debug] [MainThread]: 1699: static parser successfully parsed raw\raw_region.sql
+[0m00:24:32.348967 [debug] [MainThread]: 1699: static parser successfully parsed raw\raw_territory.sql
+[0m00:24:32.359971 [debug] [MainThread]: 1699: static parser successfully parsed staging\stg_customer.sql
+[0m00:24:32.367970 [debug] [MainThread]: 1699: static parser successfully parsed staging\stg_region.sql
+[0m00:24:32.376240 [debug] [MainThread]: 1699: static parser successfully parsed staging\stg_territory.sql
+[0m00:24:32.426243 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.nwt_cloudbridge.reporting
+[0m00:24:32.437245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fceb71f5-03b7-48f3-b485-aedcfb23f181', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB1B083310>]}
+[0m00:24:32.446247 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fceb71f5-03b7-48f3-b485-aedcfb23f181', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB1B16D2D0>]}
+[0m00:24:32.447249 [info ] [MainThread]: Found 6 models, 0 tests, 0 snapshots, 0 analyses, 325 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m00:24:32.448242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fceb71f5-03b7-48f3-b485-aedcfb23f181', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB164B9910>]}
+[0m00:24:32.451241 [info ] [MainThread]: 
+[0m00:24:32.453242 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:24:32.456243 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1'
+[0m00:24:32.475801 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1"
+[0m00:24:32.475801 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:24:32.476801 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:24:33.243951 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.0 seconds
+[0m00:24:33.246956 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: Close
+[0m00:24:33.306903 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2'
+[0m00:24:33.314905 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"
+[0m00:24:33.315902 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"} */
+show terse objects in NWT_DATA_GRP1.ADO_GRP1_ASG2
+[0m00:24:33.315902 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:24:33.941746 [debug] [ThreadPool]: SQL status: SUCCESS 26 in 1.0 seconds
+[0m00:24:33.945744 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: Close
+[0m00:24:34.007433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fceb71f5-03b7-48f3-b485-aedcfb23f181', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB1A4AC290>]}
+[0m00:24:34.008447 [info ] [MainThread]: Concurrency: 6 threads (target='dev')
+[0m00:24:34.010451 [info ] [MainThread]: 
+[0m00:24:34.021385 [debug] [Thread-1 (]: Began running node model.nwt_cloudbridge.stg_customer
+[0m00:24:34.022440 [info ] [Thread-1 (]: 1 of 1 START sql view model ADO_GRP1_ASG2.stg_customer ......................... [RUN]
+[0m00:24:34.024388 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.nwt_cloudbridge.stg_customer'
+[0m00:24:34.025388 [debug] [Thread-1 (]: Began compiling node model.nwt_cloudbridge.stg_customer
+[0m00:24:34.036788 [debug] [Thread-1 (]: Writing injected SQL for node "model.nwt_cloudbridge.stg_customer"
+[0m00:24:34.038788 [debug] [Thread-1 (]: Timing info for model.nwt_cloudbridge.stg_customer (compile): 00:24:34.026388 => 00:24:34.037788
+[0m00:24:34.038788 [debug] [Thread-1 (]: Began executing node model.nwt_cloudbridge.stg_customer
+[0m00:24:34.086374 [debug] [Thread-1 (]: Writing runtime sql for node "model.nwt_cloudbridge.stg_customer"
+[0m00:24:34.089379 [debug] [Thread-1 (]: Using snowflake connection "model.nwt_cloudbridge.stg_customer"
+[0m00:24:34.090374 [debug] [Thread-1 (]: On model.nwt_cloudbridge.stg_customer: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "node_id": "model.nwt_cloudbridge.stg_customer"} */
+create or replace   view NWT_DATA_GRP1.ADO_GRP1_ASG2.stg_customer
+  
+   as (
+    
+
+select *
+from NWT_DATA_GRP1.ADO_GRP1_ASG2.raw_customer
+  );
+[0m00:24:34.090374 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m00:24:34.737922 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m00:24:34.763596 [debug] [Thread-1 (]: Timing info for model.nwt_cloudbridge.stg_customer (execute): 00:24:34.039788 => 00:24:34.763596
+[0m00:24:34.764539 [debug] [Thread-1 (]: On model.nwt_cloudbridge.stg_customer: Close
+[0m00:24:34.816171 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fceb71f5-03b7-48f3-b485-aedcfb23f181', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB1B105B90>]}
+[0m00:24:34.817182 [info ] [Thread-1 (]: 1 of 1 OK created sql view model ADO_GRP1_ASG2.stg_customer .................... [[32mSUCCESS 1[0m in 0.79s]
+[0m00:24:34.819185 [debug] [Thread-1 (]: Finished running node model.nwt_cloudbridge.stg_customer
+[0m00:24:34.822170 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:24:34.823169 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1' was properly closed.
+[0m00:24:34.823169 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2' was properly closed.
+[0m00:24:34.824169 [debug] [MainThread]: Connection 'model.nwt_cloudbridge.stg_customer' was properly closed.
+[0m00:24:34.824169 [info ] [MainThread]: 
+[0m00:24:34.826231 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.37 seconds (2.37s).
+[0m00:24:34.827190 [debug] [MainThread]: Command end result
+[0m00:24:34.835171 [info ] [MainThread]: 
+[0m00:24:34.837172 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:24:34.839180 [info ] [MainThread]: 
+[0m00:24:34.841171 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m00:24:34.843170 [debug] [MainThread]: Command `dbt run` succeeded at 00:24:34.842170 after 4.85 seconds
+[0m00:24:34.844170 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB19FB85D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB153D6A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FB153E5A50>]}
+[0m00:24:34.845170 [debug] [MainThread]: Flushing usage events
+[0m00:25:24.041319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025203AB1850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025203AB1AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025203AB1110>]}
+
+
+============================== 00:25:24.049257 | 38bb76ed-3d24-47ae-9ea1-d525ddb46a02 ==============================
+[0m00:25:24.049257 [info ] [MainThread]: Running with dbt=1.5.9
+[0m00:25:24.050257 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m00:25:24.556005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '38bb76ed-3d24-47ae-9ea1-d525ddb46a02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025204673CD0>]}
+[0m00:25:24.569004 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '38bb76ed-3d24-47ae-9ea1-d525ddb46a02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002520468DD10>]}
+[0m00:25:24.570943 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m00:25:24.587978 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m00:25:24.656672 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:25:24.656672 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:25:24.658601 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.nwt_cloudbridge.reporting
+[0m00:25:24.666600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '38bb76ed-3d24-47ae-9ea1-d525ddb46a02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025203AC6AD0>]}
+[0m00:25:24.676601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '38bb76ed-3d24-47ae-9ea1-d525ddb46a02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252046E58D0>]}
+[0m00:25:24.677605 [info ] [MainThread]: Found 6 models, 0 tests, 0 snapshots, 0 analyses, 325 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m00:25:24.678601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '38bb76ed-3d24-47ae-9ea1-d525ddb46a02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002527FB09790>]}
+[0m00:25:24.681606 [info ] [MainThread]: 
+[0m00:25:24.684601 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:25:24.686602 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1'
+[0m00:25:24.708678 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1"
+[0m00:25:24.709678 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:25:24.709678 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:25:25.356019 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.0 seconds
+[0m00:25:25.359014 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: Close
+[0m00:25:25.409030 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2'
+[0m00:25:25.421014 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"
+[0m00:25:25.421014 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"} */
+show terse objects in NWT_DATA_GRP1.ADO_GRP1_ASG2
+[0m00:25:25.421959 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:25:25.931527 [debug] [ThreadPool]: SQL status: SUCCESS 27 in 1.0 seconds
+[0m00:25:25.935537 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: Close
+[0m00:25:25.988094 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '38bb76ed-3d24-47ae-9ea1-d525ddb46a02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002520485B290>]}
+[0m00:25:25.989094 [info ] [MainThread]: Concurrency: 6 threads (target='dev')
+[0m00:25:25.990093 [info ] [MainThread]: 
+[0m00:25:26.001146 [debug] [Thread-1 (]: Began running node model.nwt_cloudbridge.stg_region
+[0m00:25:26.002091 [info ] [Thread-1 (]: 1 of 1 START sql view model ADO_GRP1_ASG2.stg_region ........................... [RUN]
+[0m00:25:26.004097 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.nwt_cloudbridge.stg_region'
+[0m00:25:26.005113 [debug] [Thread-1 (]: Began compiling node model.nwt_cloudbridge.stg_region
+[0m00:25:26.016092 [debug] [Thread-1 (]: Writing injected SQL for node "model.nwt_cloudbridge.stg_region"
+[0m00:25:26.018093 [debug] [Thread-1 (]: Timing info for model.nwt_cloudbridge.stg_region (compile): 00:25:26.005113 => 00:25:26.017092
+[0m00:25:26.019094 [debug] [Thread-1 (]: Began executing node model.nwt_cloudbridge.stg_region
+[0m00:25:26.055643 [debug] [Thread-1 (]: Writing runtime sql for node "model.nwt_cloudbridge.stg_region"
+[0m00:25:26.057642 [debug] [Thread-1 (]: Using snowflake connection "model.nwt_cloudbridge.stg_region"
+[0m00:25:26.058644 [debug] [Thread-1 (]: On model.nwt_cloudbridge.stg_region: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "node_id": "model.nwt_cloudbridge.stg_region"} */
+create or replace   view NWT_DATA_GRP1.ADO_GRP1_ASG2.stg_region
+  
+   as (
+    
+
+select *
+from NWT_DATA_GRP1.ADO_GRP1_ASG2.raw_region
+  );
+[0m00:25:26.059640 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m00:25:26.592836 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m00:25:26.627132 [debug] [Thread-1 (]: Timing info for model.nwt_cloudbridge.stg_region (execute): 00:25:26.020114 => 00:25:26.626133
+[0m00:25:26.627132 [debug] [Thread-1 (]: On model.nwt_cloudbridge.stg_region: Close
+[0m00:25:26.675264 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '38bb76ed-3d24-47ae-9ea1-d525ddb46a02', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252048B6E10>]}
+[0m00:25:26.676264 [info ] [Thread-1 (]: 1 of 1 OK created sql view model ADO_GRP1_ASG2.stg_region ...................... [[32mSUCCESS 1[0m in 0.67s]
+[0m00:25:26.677266 [debug] [Thread-1 (]: Finished running node model.nwt_cloudbridge.stg_region
+[0m00:25:26.679266 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:25:26.680264 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1' was properly closed.
+[0m00:25:26.681264 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2' was properly closed.
+[0m00:25:26.681264 [debug] [MainThread]: Connection 'model.nwt_cloudbridge.stg_region' was properly closed.
+[0m00:25:26.682264 [info ] [MainThread]: 
+[0m00:25:26.684266 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.00 seconds (2.00s).
+[0m00:25:26.687634 [debug] [MainThread]: Command end result
+[0m00:25:26.695889 [info ] [MainThread]: 
+[0m00:25:26.696887 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:25:26.699300 [info ] [MainThread]: 
+[0m00:25:26.700300 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m00:25:26.703300 [debug] [MainThread]: Command `dbt run` succeeded at 00:25:26.702331 after 2.73 seconds
+[0m00:25:26.703300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002527E9E6AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002527E9F5A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002527E9F5A50>]}
+[0m00:25:26.704300 [debug] [MainThread]: Flushing usage events
+[0m00:25:52.726248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001709205E410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017092032990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017092033F50>]}
+
+
+============================== 00:25:52.731252 | 57fe9676-3008-4e49-8a0d-fb4151b65a2c ==============================
+[0m00:25:52.731252 [info ] [MainThread]: Running with dbt=1.5.9
+[0m00:25:52.732248 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\prana\\.dbt', 'log_path': 'C:\\Program Files\\Dbt_Snowflake\\NWT_cloudbridge\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m00:25:53.213237 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '57fe9676-3008-4e49-8a0d-fb4151b65a2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000170920321D0>]}
+[0m00:25:53.226231 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '57fe9676-3008-4e49-8a0d-fb4151b65a2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017092C14250>]}
+[0m00:25:53.228177 [info ] [MainThread]: Registered adapter: snowflake=1.5.0
+[0m00:25:53.243251 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m00:25:53.298704 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:25:53.299706 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:25:53.301745 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.nwt_cloudbridge.reporting
+[0m00:25:53.311766 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '57fe9676-3008-4e49-8a0d-fb4151b65a2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017092C54A90>]}
+[0m00:25:53.322231 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '57fe9676-3008-4e49-8a0d-fb4151b65a2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017092C95750>]}
+[0m00:25:53.323248 [info ] [MainThread]: Found 6 models, 0 tests, 0 snapshots, 0 analyses, 325 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics, 0 groups
+[0m00:25:53.324250 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '57fe9676-3008-4e49-8a0d-fb4151b65a2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001708E0C9910>]}
+[0m00:25:53.327253 [info ] [MainThread]: 
+[0m00:25:53.328196 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:25:53.331198 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1'
+[0m00:25:53.350205 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1"
+[0m00:25:53.352203 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1"} */
+show terse schemas in database NWT_DATA_GRP1
+    limit 10000
+[0m00:25:53.352203 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:25:54.137914 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.0 seconds
+[0m00:25:54.140948 [debug] [ThreadPool]: On list_NWT_DATA_GRP1: Close
+[0m00:25:54.189915 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2'
+[0m00:25:54.206918 [debug] [ThreadPool]: Using snowflake connection "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"
+[0m00:25:54.206918 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "connection_name": "list_NWT_DATA_GRP1_ADO_GRP1_ASG2"} */
+show terse objects in NWT_DATA_GRP1.ADO_GRP1_ASG2
+[0m00:25:54.208477 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:25:54.911723 [debug] [ThreadPool]: SQL status: SUCCESS 28 in 1.0 seconds
+[0m00:25:54.916080 [debug] [ThreadPool]: On list_NWT_DATA_GRP1_ADO_GRP1_ASG2: Close
+[0m00:25:54.967980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '57fe9676-3008-4e49-8a0d-fb4151b65a2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001708D562310>]}
+[0m00:25:54.968980 [info ] [MainThread]: Concurrency: 6 threads (target='dev')
+[0m00:25:54.969979 [info ] [MainThread]: 
+[0m00:25:54.979110 [debug] [Thread-1 (]: Began running node model.nwt_cloudbridge.stg_territory
+[0m00:25:54.980109 [info ] [Thread-1 (]: 1 of 1 START sql view model ADO_GRP1_ASG2.stg_territory ........................ [RUN]
+[0m00:25:54.982109 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.nwt_cloudbridge.stg_territory'
+[0m00:25:54.984115 [debug] [Thread-1 (]: Began compiling node model.nwt_cloudbridge.stg_territory
+[0m00:25:54.995171 [debug] [Thread-1 (]: Writing injected SQL for node "model.nwt_cloudbridge.stg_territory"
+[0m00:25:54.996148 [debug] [Thread-1 (]: Timing info for model.nwt_cloudbridge.stg_territory (compile): 00:25:54.985113 => 00:25:54.996148
+[0m00:25:54.997154 [debug] [Thread-1 (]: Began executing node model.nwt_cloudbridge.stg_territory
+[0m00:25:55.040947 [debug] [Thread-1 (]: Writing runtime sql for node "model.nwt_cloudbridge.stg_territory"
+[0m00:25:55.043884 [debug] [Thread-1 (]: Using snowflake connection "model.nwt_cloudbridge.stg_territory"
+[0m00:25:55.044901 [debug] [Thread-1 (]: On model.nwt_cloudbridge.stg_territory: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "NWT_cloudbridge", "target_name": "dev", "node_id": "model.nwt_cloudbridge.stg_territory"} */
+create or replace   view NWT_DATA_GRP1.ADO_GRP1_ASG2.stg_territory
+  
+   as (
+    
+
+select *
+from NWT_DATA_GRP1.ADO_GRP1_ASG2.raw_territory
+  );
+[0m00:25:55.045873 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m00:25:55.657063 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m00:25:55.690086 [debug] [Thread-1 (]: Timing info for model.nwt_cloudbridge.stg_territory (execute): 00:25:54.998140 => 00:25:55.690086
+[0m00:25:55.691074 [debug] [Thread-1 (]: On model.nwt_cloudbridge.stg_territory: Close
+[0m00:25:55.727211 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '57fe9676-3008-4e49-8a0d-fb4151b65a2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017092C6EE50>]}
+[0m00:25:55.729210 [info ] [Thread-1 (]: 1 of 1 OK created sql view model ADO_GRP1_ASG2.stg_territory ................... [[32mSUCCESS 1[0m in 0.75s]
+[0m00:25:55.730209 [debug] [Thread-1 (]: Finished running node model.nwt_cloudbridge.stg_territory
+[0m00:25:55.733209 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:25:55.734210 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1' was properly closed.
+[0m00:25:55.734210 [debug] [MainThread]: Connection 'list_NWT_DATA_GRP1_ADO_GRP1_ASG2' was properly closed.
+[0m00:25:55.735209 [debug] [MainThread]: Connection 'model.nwt_cloudbridge.stg_territory' was properly closed.
+[0m00:25:55.736214 [info ] [MainThread]: 
+[0m00:25:55.737211 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.41 seconds (2.41s).
+[0m00:25:55.739375 [debug] [MainThread]: Command end result
+[0m00:25:55.747639 [info ] [MainThread]: 
+[0m00:25:55.749639 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:25:55.750639 [info ] [MainThread]: 
+[0m00:25:55.751640 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m00:25:55.753638 [debug] [MainThread]: Command `dbt run` succeeded at 00:25:55.753638 after 3.08 seconds
+[0m00:25:55.754639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000170920533D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017091CA4A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001708CFB5A10>]}
+[0m00:25:55.755739 [debug] [MainThread]: Flushing usage events
