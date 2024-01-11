@@ -2,24 +2,24 @@
 
 SELECT *,
     -- 1. TotalStockValue
-    UnitsInStock * UnitPrice AS TotalStockValue,
+    unitsInStock * unitPrice AS totalStockValue,
 
     -- 2. TotalOrderValue
-    UnitsOnOrder * UnitPrice AS TotalOrderValue,
+    unitsOnOrder * unitPrice AS totalOrderValue,
 
     -- 3. TotalValue
-    TotalStockValue + TotalOrderValue AS TotalValue,
+    totalStockValue + totalOrderValue AS totalValue,
 
     -- 4. ValuePerUnit
     CASE
-        WHEN UnitsInStock + UnitsOnOrder = 0 THEN 0 -- Check for division by zero
-        ELSE TotalValue / (UnitsInStock + UnitsOnOrder)
-    END AS ValuePerUnit,
+        WHEN unitsInStock + unitsOnOrder = 0 THEN 0 -- Check for division by zero
+        ELSE totalValue / (unitsInStock + unitsOnOrder)
+    END AS valuePerUnit,
 
     -- 5. ReorderCheck
     CASE
-        WHEN UnitsInStock <= ReorderLevel THEN TRUE
+        WHEN unitsInStock <= reorderLevel THEN TRUE
         ELSE FALSE
-    END AS ReorderCheck
+    END AS reorderCheck
 
 FROM {{ ref ('raw_products')}}
