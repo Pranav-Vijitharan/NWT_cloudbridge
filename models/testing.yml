@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: raw_products
+    columns:
+      - name: productID
+        tests:
+          - unique
+          - not_null
+          - integer
+      - name: categoryID
+        tests:
+          - not_null
+          - integer
+      -supplierID
+        tests: 
+          - not_null
+          - integer
+  - name: raw_category
+    columns:
+      - name: categoryID
+        tests:
+          - unique
+          - not_null
+          - integer
+
