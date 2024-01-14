@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: NWT
+    description: A Clone of the Snowflake Database
+    database: NWT_DATA_GRP1
+    schema: ADO_GRP1_ASG2
+    tables:
+      - name: PRODUCTS
+        description: Raw Products Table
+        columns: 
+          - name: productID
+            description: Primary Key for products
+      - name: CATEGORY
+        description: Raw Category Table
+        columns:
+          - name: categoryID
+            description: Primary Key for category
+      - name: FRESH_ORDERS
+        description: fresh orders to be appended into ORDERS Table
+        columns:
+          - name: orderID
+            description: primary key for FRESH_ORDERS

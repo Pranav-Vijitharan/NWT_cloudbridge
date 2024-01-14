@@ -1,5 +1,8 @@
-{{config (materialized='table')}}
+{{config (materialized='incremental', unique_key='orderID')}}
 
 SELECT *
-FROM
-NWT_DATA_GRP1.ADO_GRP1_ASG2.ORDERS
+FROM {{ ref ('fresh_orders') }}
+{% if is_incremental() %}
+WHERE CAST(orderID AS BIGINT) > (SELECT MAX(CAST(orderID AS BIGINT)) 
+FROM {{this}})
+{% endif %}

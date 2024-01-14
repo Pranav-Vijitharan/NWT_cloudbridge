@@ -793,3 +793,15 @@ from NWT_DATA_GRP1.ADO_GRP1_ASG2.raw_territory
 [0m00:25:55.753638 [debug] [MainThread]: Command `dbt run` succeeded at 00:25:55.753638 after 3.08 seconds
 [0m00:25:55.754639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000170920533D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017091CA4A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001708CFB5A10>]}
 [0m00:25:55.755739 [debug] [MainThread]: Flushing usage events
+[0m18:18:14.633668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260B1BF8E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260AFB28F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260AFB28D50>]}
+
+
+============================== 18:18:14.638667 | 3befcd7a-b915-4470-b46a-c05771aefdce ==============================
+[0m18:18:14.638667 [info ] [MainThread]: Running with dbt=1.5.9
+[0m18:18:14.639668 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\akula\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\akula\\Desktop\\Course\\NWT_cloudbridge\\logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m18:18:14.642668 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'NWT_cloudbridge'
+[0m18:18:14.643668 [debug] [MainThread]: Command `dbt run` failed at 18:18:14.643668 after 0.03 seconds
+[0m18:18:14.644670 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260B1BEC490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260AFB29350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260B16A9690>]}
+[0m18:18:14.644670 [debug] [MainThread]: Flushing usage events
