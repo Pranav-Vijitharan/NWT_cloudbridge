@@ -20,3 +20,25 @@ models:
           - unique
           - not_null
 
+  - name: raw_orders
+    columns:
+      - name: orderID
+        tests:
+          - unique
+          - not_null
+      - name: customerID
+        tests:
+          - not_null
+      - name: employeeID
+        tests:
+          - not_null
+          
+  - name: raw_orderdetails
+    columns:
+      - name: orderID
+        tests:
+          - not_null
+      - name: productID
+        tests:
+          - not_null
+
