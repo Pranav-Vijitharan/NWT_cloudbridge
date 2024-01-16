@@ -7,20 +7,16 @@ models:
         tests:
           - unique
           - not_null
-          - integer
       - name: categoryID
         tests:
           - not_null
-          - integer
-      -supplierID
+      - name: supplierID
         tests: 
           - not_null
-          - integer
   - name: raw_category
     columns:
       - name: categoryID
         tests:
           - unique
           - not_null
-          - integer
 
