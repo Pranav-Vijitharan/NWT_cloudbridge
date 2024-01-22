@@ -2,16 +2,19 @@
 
 SELECT
     e.EmployeeID,
-    e.fullName,
+    e.FullName,
     e.Title,
-    e.age,
-    e.employeeTenure AS EmployeeTenure,
+    e.Age,
+    e.EmployeeTenure,
     e.Address AS EmployeeAddress,
     e.City AS EmployeeCity,
     e.Region AS EmployeeRegion,
     e.PostalCode AS EmployeePostalCode,
     e.Country AS EmployeeCountry,
-    et.territoryid,
+    et.TerritoryID,
+    te.TerritoryDescription,
+    te.RegionID,
+    r.RegionDescription,
     e.HomePhone,
     e.Extension,
     e.Photo,
@@ -34,3 +37,7 @@ LEFT JOIN {{ ref('stg_employee') }} as e
 ON e.EmployeeID = o.EmployeeID
 LEFT JOIN {{ ref('stg_employeeterritories') }} as et
 ON e.EmployeeID = et.EmployeeID
+LEFT JOIN {{ ref('stg_territory') }} as te
+ON te.TerritoryID = et.TerritoryID
+LEFT JOIN {{ ref('stg_region') }} as r
+ON r.RegionID = te.RegionID
