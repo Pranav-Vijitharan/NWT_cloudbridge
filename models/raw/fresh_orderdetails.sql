@@ -1,4 +1,4 @@
 {{ config (materialized='table')}}
 
-SELECT * From 
+SELECT * FROM
 NWT_DATA_GRP1.ADO_GRP1_ASG2.FRESH_ORDERDETAILS
