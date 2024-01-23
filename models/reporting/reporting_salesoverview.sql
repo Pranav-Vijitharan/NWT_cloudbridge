@@ -4,7 +4,7 @@ SELECT
 -- Profit column
 -- (od.REVENUE - od.DISCOUNTAMOUNT - o.FREIGHT - p.UNITCOST) AS profit,
 -- (od.REVENUE - od.DISCOUNTAMOUNT - o.FREIGHT - p.UNITCOST) / od.REVENUE * 100 AS profitMargin,
-{{ calculate_profit('o', 'od', 'p') }}
+{{ calculate_profit('o', 'od', 'p') }},
 -- Orders table
 o.ORDERID,
 o.ORDERDATE,
