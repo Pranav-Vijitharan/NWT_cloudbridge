@@ -10,15 +10,64 @@ models:
       - name: categoryID
         tests:
           - not_null
+          - relationships:
+              field: categoryID
+              to: ref('raw_category')
       - name: supplierID
         tests: 
           - not_null
+          - relationships:
+              field: supplierID
+              to: ref('raw_supplier')
+      - name: productName
+        tests:
+          - not_null
+      - name: quantityPerUnit
+        tests:
+          - not_null
+      - name: unitPrice
+        tests: 
+          - not_null
+      - name: unitsInStock
+        tests:
+          - not_null
+      - name: unitsOnOrder
+        tests:
+          - not_null
+      - name: reorderLevel
+        tests:
+          - not_null
+      - name: discontinued
+        tests: 
+          - not_null
+          - accepted_values:
+              values:
+                - True
+                - False
+      - name: unitCost
+        tests:
+          - not_null
+
+
   - name: raw_category
     columns:
       - name: categoryID
         tests:
           - unique
           - not_null
+      - name: categoryName
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Beverages
+                - Condiments
+                - Confections
+                - Dairy Products
+                - Grains/Cereals
+                - Meat/Poultry
+                - Produce
+                - Seafood
 
   - name: raw_orders
     columns:
@@ -29,11 +78,52 @@ models:
       - name: customerID
         tests:
           - not_null
+          - relationships:
+              field: customerID
+              to: ref('raw_customer')
       - name: employeeID
         tests:
           - not_null
+          - relationships:
+              field: employeeID
+              to: ref('raw_employee')
+      - name: orderDate
+        tests:
+          - not_null
+      - name: requiredDate
+        tests: 
+          - not_null     
+      - name: shipVia
+        tests: 
+          - not_null
+          - accepted_values:
+              values:
+                - 1
+                - 2
+                - 3          
+      - name: freight
+        tests: 
+          - not_null     
+      - name: shipName
+        tests: 
+          - not_null
+      - name: shipAddress
+        tests: 
+          - not_null
+      - name: shipCity
+        tests: 
+          - not_null
+      - name: shipCountry
+        tests: 
+          - not_null
+
           
   - name: raw_orderdetails
+    tests: 
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - orderID
+            - productID
     columns:
       - name: orderID
         tests:
@@ -41,4 +131,215 @@ models:
       - name: productID
         tests:
           - not_null
+          - relationships:
+              field: productID
+              to: ref('raw_products')        
+      - name: unitPrice
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+      - name: discount
+        tests:
+          - not_null 
 
+
+  - name: raw_supplier
+    columns:
+      - name: supplierid
+        tests:
+          - unique
+          - not_null
+      - name: companyName
+        tests: 
+          - unique 
+          - not_null           
+      - name: country
+        tests:
+          - not_null
+      - name: region
+        tests:
+          - not_null
+      - name: city
+        tests:
+          - not_null
+      - name: address
+        tests:
+          - not_null
+          - unique 
+      - name: phone
+        tests:
+          - not_null
+          - unique 
+      # - name: fax
+      #   tests:
+      #   - dbt_expectations.expect_column_values_to_be_unique:
+      #       row_condition: "fax is not null" # (Apply test to not null values of fax) 
+      - name: postalCode
+        tests:
+          - unique 
+
+
+  - name: raw_shipper
+    columns:
+      - name: shipperid
+        tests:
+          - unique
+          - not_null
+      - name: companyName
+        tests:
+          - not_null
+          - unique 
+      - name: phone
+        tests:
+          - not_null 
+          - unique 
+
+
+  - name: raw_employeeterritories
+    columns:
+      - name: employeeID
+        tests:
+          - not_null
+      - name: territoryID
+        tests:
+          - not_null
+          - relationships:
+              field: territoryID
+              to: ref('raw_territory')
+
+
+  - name: raw_employee
+    columns:
+      - name: employeeID
+        tests:
+          - not_null
+          - unique
+      - name: lastName
+        tests:
+          - not_null
+      - name: firstName
+        tests:
+          - not_null
+      - name: title
+        tests:
+          - not_null
+      - name: titleOfCourtesy
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Mr.
+                - Ms.
+                - Mrs.
+                - Dr.
+      - name: birthDate
+        tests:
+          - not_null
+      - name: hireDate
+        tests:
+          - not_null
+      - name: address
+        tests:
+          - not_null
+          - unique
+      - name: city
+        tests:
+          - not_null
+      # - name: region
+      #   tests:
+      #     - not_null
+      - name: postalCode
+        tests:
+          - not_null
+          - unique
+      - name: country
+        tests:
+          - not_null
+      - name: homePhone
+        tests:
+          - not_null
+          - unique
+      - name: extension
+        tests:
+          - not_null
+          - unique 
+      - name: photo
+        tests:
+          - not_null
+      - name: notes
+        tests:
+          - not_null
+          - unique          
+      - name: reportsTo
+        tests:
+          - not_null
+      - name: photoPath
+        tests:
+          - not_null
+
+
+  - name: raw_region
+    columns:
+      - name: regionID
+        tests:
+          - not_null
+          - unique
+      - name: regionDescription
+        tests:
+          - not_null
+          - unique
+
+
+  - name: raw_territory
+    columns:
+      - name: territoryID
+        tests:
+          - not_null
+          - unique
+      - name: territoryDescription
+        tests:
+          - not_null
+      - name: regionID
+        tests:
+          - not_null 
+          - accepted_values:
+              values:
+                - 1
+                - 2
+                - 3
+                - 4 
+          - relationships:
+              field: regionID
+              to: ref('raw_region')
+
+  - name: raw_customer
+    columns:
+      - name: customerID
+        tests:
+          - not_null
+          - unique
+      - name: companyName
+        tests:
+          - not_null
+      - name: contactName
+        tests:
+          - not_null
+          - unique 
+      - name: address
+        tests:
+          - unique 
+          - not_null
+      - name: postalCode
+        tests:
+          # - unique
+          - not_null        
+      - name: phone
+        tests:
+          - unique 
+          - not_null 
+      # - name: fax
+      #   tests:
+      #   - dbt_expectations.expect_column_values_to_be_unique:
+      #       row_condition: "fax is not null" # (Apply test to not null values of fax)                     
