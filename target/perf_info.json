@@ -1,30 +1,56 @@
 {
     "path_count": 165,
-    "parsed_path_count": 0,
-    "static_analysis_path_count": 0,
-    "static_analysis_parsed_path_count": 0,
+    "parsed_path_count": 165,
+    "static_analysis_path_count": 29,
+    "static_analysis_parsed_path_count": 24,
     "is_partial_parse_enabled": true,
     "is_static_analysis_enabled": true,
-    "read_files_elapsed": 0.07396248000441119,
-    "load_all_elapsed": 0.10209523001685739,
+    "read_files_elapsed": 0.08279435202712193,
+    "load_macros_elapsed": 0.6217274479568005,
+    "parse_project_elapsed": 0.15323081199312583,
+    "patch_sources_elapsed": 0.0007244499865919352,
+    "process_manifest_elapsed": 0.01949931401759386,
+    "load_all_elapsed": 0.9324568450101651,
     "projects": [
         {
             "project_name": "nwt_cloudbridge",
-            "elapsed": 0.0,
-            "parsers": [],
-            "parsed_path_count": 0
+            "elapsed": 0.14483510400168598,
+            "parsers": [
+                {
+                    "parser": "model",
+                    "elapsed": 0.10234590497566387,
+                    "parsed_path_count": 29
+                },
+                {
+                    "parser": "test",
+                    "elapsed": 0.00848180998582393,
+                    "parsed_path_count": 1
+                },
+                {
+                    "parser": "test",
+                    "elapsed": 0.02899792295647785,
+                    "parsed_path_count": 2
+                }
+            ],
+            "parsed_path_count": 32
         },
         {
             "project_name": "dbt_snowflake",
-            "elapsed": 0.0,
+            "elapsed": 0.0035006150137633085,
             "parsers": [],
             "parsed_path_count": 0
         },
         {
             "project_name": "dbt",
-            "elapsed": 0.0,
-            "parsers": [],
-            "parsed_path_count": 0
+            "elapsed": 0.004709869041107595,
+            "parsers": [
+                {
+                    "parser": "doc",
+                    "elapsed": 0.00024225300876423717,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 1
         }
     ]
 }
