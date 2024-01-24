@@ -1,12 +1,12 @@
 {
-    "path_count": 165,
+    "path_count": 166,
     "parsed_path_count": 0,
     "static_analysis_path_count": 0,
     "static_analysis_parsed_path_count": 0,
     "is_partial_parse_enabled": true,
     "is_static_analysis_enabled": true,
-    "read_files_elapsed": 0.07008261501323432,
-    "load_all_elapsed": 0.09807050199015066,
+    "read_files_elapsed": 0.20204950199695304,
+    "load_all_elapsed": 0.23959728801855817,
     "projects": [
         {
             "project_name": "nwt_cloudbridge",
