@@ -1,12 +1,16 @@
 {
-    "path_count": 166,
+    "path_count": 165,
     "parsed_path_count": 0,
     "static_analysis_path_count": 0,
     "static_analysis_parsed_path_count": 0,
     "is_partial_parse_enabled": true,
     "is_static_analysis_enabled": true,
-    "read_files_elapsed": 0.08343734999652952,
-    "load_all_elapsed": 0.2415490390267223,
+    "read_files_elapsed": 0.09569614694919437,
+    "load_macros_elapsed": 0.0006572079728357494,
+    "parse_project_elapsed": 0.00013198499800637364,
+    "patch_sources_elapsed": 1.3882003258913755e-05,
+    "process_manifest_elapsed": 0.0001448949915356934,
+    "load_all_elapsed": 0.1922993580228649,
     "projects": [
         {
             "project_name": "nwt_cloudbridge",
