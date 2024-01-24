@@ -25,9 +25,8 @@ onTimeStatus,
 orderDuration,
 shippingDelay,
 shippingTime,
--- Profit & Profit Margin Calculation
-(od.revenue - od.discountAmount - o.freight) AS profit,
-(od.revenue - od.discountAmount - o.freight) / od.revenue * 100 AS profitMargin,
+{{ calculate_profit('o', 'od', 'p') }}, -- Macro to calculate profit
+
 
 --from products
 
@@ -38,6 +37,7 @@ unitsinStock,
 unitsOnOrder,
 reorderLevel,
 discontinued,
+unitCost,
 totalStockValue,
 totalOrderValue,
 totalValue,
