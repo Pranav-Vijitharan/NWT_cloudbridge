@@ -31,8 +31,8 @@ shippingTime,
 --from products
 
 productName,
-pro.categoryID,
-pro.supplierID,
+p.categoryID,
+p.supplierID,
 unitsinStock,
 unitsOnOrder,
 reorderLevel,
@@ -57,10 +57,10 @@ companyName AS supplierCompany
 FROM {{ ref('stg_orderdetails') }} AS od
 INNER JOIN {{ ref('stg_orders') }} AS o 
 ON od.orderID = o.orderID
-INNER JOIN {{ ref('stg_products') }} AS pro
-ON od.productID = pro.productID
+INNER JOIN {{ ref('stg_products') }} AS p
+ON od.productID = p.productID
 INNER JOIN {{ ref('stg_category') }} AS cat 
-ON pro.categoryID = cat.categoryID
+ON p.categoryID = cat.categoryID
 INNER JOIN {{ ref('stg_supplier') }} AS sup 
-ON pro.supplierID = sup.supplierID
+ON p.supplierID = sup.supplierID
 
