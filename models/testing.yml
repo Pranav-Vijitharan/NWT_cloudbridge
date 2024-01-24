@@ -7,18 +7,94 @@ models:
         tests:
           - unique
           - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number
       - name: categoryID
         tests:
           - not_null
+          - relationships:
+              field: categoryID
+              to: ref('raw_category')
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number
       - name: supplierID
         tests: 
           - not_null
+          - relationships:
+              field: supplierID
+              to: ref('raw_supplier')
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number              
+      - name: productName
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar        
+      - name: quantityPerUnit
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: unitPrice
+        tests: 
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number         
+      - name: unitsInStock
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number         
+      - name: unitsOnOrder
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number         
+      - name: reorderLevel
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number          
+      - name: discontinued
+        tests: 
+          - not_null
+          - accepted_values:
+              values:
+                - True
+                - False
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: boolean               
+      - name: unitCost
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number          
+
+
   - name: raw_category
     columns:
       - name: categoryID
         tests:
           - unique
           - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number         
+      - name: categoryName
+        tests:
+          - not_null         
+          - accepted_values:
+              values:
+                - Beverages
+                - Condiments
+                - Confections
+                - Dairy Products
+                - Grains/Cereals
+                - Meat/Poultry
+                - Produce
+                - Seafood
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
+
 
   - name: raw_orders
     columns:
@@ -26,19 +102,419 @@ models:
         tests:
           - unique
           - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number          
       - name: customerID
         tests:
           - not_null
+          - relationships:
+              field: customerID
+              to: ref('raw_customer')
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar             
       - name: employeeID
         tests:
           - not_null
+          - relationships:
+              field: employeeID
+              to: ref('raw_employee')
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number              
+      - name: orderDate
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date          
+      - name: requiredDate
+        tests: 
+          - not_null  
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+      - name: shippedDate
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date                       
+      - name: shipVia
+        tests: 
+          - not_null
+          - accepted_values:
+              values:
+                - 1
+                - 2
+                - 3  
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number 
+          - relationships:
+              field: shipperID   
+              to: ref('raw_shipper')                    
+      - name: freight
+        tests: 
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number     
+      - name: shipName
+        tests: 
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: shipAddress
+        tests: 
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
+      - name: shipRegion
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar                      
+      - name: shipCity
+        tests: 
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar 
+      - name: shipPostal
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar                     
+      - name: shipCountry
+        tests: 
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar 
           
   - name: raw_orderdetails
+    tests: 
+      - dbt_utils.unique_combination_of_columns: # Checking that combination of orderID and productID is unique to test uniqueness of each row
+          combination_of_columns:
+            - orderID
+            - productID            
     columns:
       - name: orderID
         tests:
           - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number  
+          - relationships:
+              field: orderID
+              to: ref('raw_orders')                   
       - name: productID
         tests:
           - not_null
+          - relationships:
+              field: productID
+              to: ref('raw_products') 
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number                      
+      - name: unitPrice
+        tests:
+          - not_null
+          - relationships:  # Metadata states that UnitPrice in Orderdetails has a one-to-one relationship with Products Table
+              field: unitPrice
+              to: ref('raw_products')          
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number           
+      - name: quantity
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number           
+      - name: discount
+        tests:
+          - not_null 
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
 
+
+  - name: raw_supplier
+    columns:
+      - name: supplierid
+        tests:
+          - unique
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number          
+      - name: companyName
+        tests: 
+          - unique 
+          - not_null  
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar                   
+      - name: country
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: region
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: city
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: address
+        tests:
+          - not_null
+          - unique 
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: phone
+        tests:
+          - not_null
+          - unique 
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: fax
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      #   - dbt_expectations.expect_column_values_to_be_unique:
+      #       row_condition: "fax is not null" # (Apply test to not null values of fax) 
+      - name: postalCode
+        tests:
+          - unique 
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
+
+
+  - name: raw_shipper
+    columns:
+      - name: shipperid
+        tests:
+          - unique
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number          
+      - name: companyName
+        tests:
+          - not_null
+          - unique 
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: phone
+        tests:
+          - not_null 
+          - unique 
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
+
+  - name: raw_employeeterritories
+    tests: 
+      - dbt_utils.unique_combination_of_columns: # Checking that combination of employeeID and terrirtoryID is unique to test uniqueness of each row
+          combination_of_columns:
+            - employeeID
+            - territoryID
+    columns:
+      - name: employeeID
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number         
+      - name: territoryID
+        tests:
+          - not_null
+          - relationships:
+              field: territoryID
+              to: ref('raw_territory')
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
+
+  - name: raw_employee
+    columns:
+      - name: employeeID
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number          
+      - name: lastName
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: firstName
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: title
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: titleOfCourtesy
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Mr.
+                - Ms.
+                - Mrs.
+                - Dr.
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar                
+      - name: birthDate
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date          
+          # - dbt_expectations.expect_column_values_to_match_regex:
+          #     regex: "^\d{1,2}/\d{1,2}/\d{4} \d{1,2}:\d{2}:\d{2} [apAP][mM]$"
+      - name: hireDate
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date          
+      - name: address
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: city
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: region
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
+      - name: postalCode
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: country
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: homePhone
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: extension
+        tests:
+          - not_null
+          - unique 
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: photo
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: notes
+        tests:
+          - not_null
+          - unique  
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar                  
+      - name: reportsTo
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number  
+          - relationships:
+              field: employeeID
+              to: ref('raw_employee')                      
+      - name: photoPath
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_match_like_pattern:
+              like_pattern: "%http://accweb/emmployees%.bmp" # (Ensure path starts with 'http://accweb/emmployees' and ends with .bmp )
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
+
+  - name: raw_region
+    columns:
+      - name: regionID
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number      
+      - name: regionDescription
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
+
+  - name: raw_territory
+    columns:
+      - name: territoryID
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: territoryDescription
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: regionID
+        tests:
+          - not_null 
+          - accepted_values:
+              values:
+                - 1
+                - 2
+                - 3
+                - 4 
+          - relationships:
+              field: regionID
+              to: ref('raw_region')
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number
+
+
+  - name: raw_customer
+    columns:
+      - name: customerID
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: companyName
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: contactName
+        tests:
+          - not_null
+          - unique 
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: address
+        tests:
+          - unique 
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: postalCode
+        tests:
+          # - unique
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar                  
+      - name: phone
+        tests:
+          - unique 
+          - not_null 
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+      - name: fax
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar          
+        # - dbt_expectations.expect_column_values_to_be_unique:
+        #     row_condition: "fax is not null" # (Apply test to not null values of fax)                     

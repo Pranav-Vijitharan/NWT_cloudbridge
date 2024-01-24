@@ -25,19 +25,19 @@ onTimeStatus,
 orderDuration,
 shippingDelay,
 shippingTime,
--- Profit & Profit Margin Calculation
-(od.revenue - od.discountAmount - o.freight) AS profit,
-(od.revenue - od.discountAmount - o.freight) / od.revenue * 100 AS profitMargin,
+{{ calculate_profit('o', 'od', 'p') }}, -- Macro to calculate profit
+
 
 --from products
 
 productName,
-pro.categoryID,
-pro.supplierID,
+p.categoryID,
+p.supplierID,
 unitsinStock,
 unitsOnOrder,
 reorderLevel,
 discontinued,
+unitCost,
 totalStockValue,
 totalOrderValue,
 totalValue,
@@ -57,10 +57,10 @@ companyName AS supplierCompany
 FROM {{ ref('stg_orderdetails') }} AS od
 INNER JOIN {{ ref('stg_orders') }} AS o 
 ON od.orderID = o.orderID
-INNER JOIN {{ ref('stg_products') }} AS pro
-ON od.productID = pro.productID
+INNER JOIN {{ ref('stg_products') }} AS p
+ON od.productID = p.productID
 INNER JOIN {{ ref('stg_category') }} AS cat 
-ON pro.categoryID = cat.categoryID
+ON p.categoryID = cat.categoryID
 INNER JOIN {{ ref('stg_supplier') }} AS sup 
-ON pro.supplierID = sup.supplierID
+ON p.supplierID = sup.supplierID
 
