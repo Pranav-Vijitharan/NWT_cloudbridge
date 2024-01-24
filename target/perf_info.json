@@ -1,56 +1,30 @@
 {
     "path_count": 165,
-    "parsed_path_count": 165,
-    "static_analysis_path_count": 29,
-    "static_analysis_parsed_path_count": 24,
+    "parsed_path_count": 0,
+    "static_analysis_path_count": 0,
+    "static_analysis_parsed_path_count": 0,
     "is_partial_parse_enabled": true,
     "is_static_analysis_enabled": true,
-    "read_files_elapsed": 0.08200889202998951,
-    "load_macros_elapsed": 0.6233734210254624,
-    "parse_project_elapsed": 0.14696540299337357,
-    "patch_sources_elapsed": 0.0006710260058753192,
-    "process_manifest_elapsed": 0.019313186989165843,
-    "load_all_elapsed": 0.9273453900241293,
+    "read_files_elapsed": 0.0738502680324018,
+    "load_all_elapsed": 0.10184820101130754,
     "projects": [
         {
             "project_name": "nwt_cloudbridge",
-            "elapsed": 0.1393996580154635,
-            "parsers": [
-                {
-                    "parser": "model",
-                    "elapsed": 0.09684354200726375,
-                    "parsed_path_count": 29
-                },
-                {
-                    "parser": "test",
-                    "elapsed": 0.007638434995897114,
-                    "parsed_path_count": 1
-                },
-                {
-                    "parser": "test",
-                    "elapsed": 0.028949120023753494,
-                    "parsed_path_count": 2
-                }
-            ],
-            "parsed_path_count": 32
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
         },
         {
             "project_name": "dbt_snowflake",
-            "elapsed": 0.0035722359898500144,
+            "elapsed": 0.0,
             "parsers": [],
             "parsed_path_count": 0
         },
         {
             "project_name": "dbt",
-            "elapsed": 0.003797472978476435,
-            "parsers": [
-                {
-                    "parser": "doc",
-                    "elapsed": 0.0002849120064638555,
-                    "parsed_path_count": 1
-                }
-            ],
-            "parsed_path_count": 1
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
         }
     ]
 }
