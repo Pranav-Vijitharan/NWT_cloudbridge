@@ -5,30 +5,30 @@
     "static_analysis_parsed_path_count": 24,
     "is_partial_parse_enabled": true,
     "is_static_analysis_enabled": true,
-    "read_files_elapsed": 0.08219785999972373,
-    "load_macros_elapsed": 0.7558367259916849,
-    "parse_project_elapsed": 0.14908407599432394,
-    "patch_sources_elapsed": 0.0006732949987053871,
-    "process_manifest_elapsed": 0.018753449025098234,
-    "load_all_elapsed": 1.0624115809914656,
+    "read_files_elapsed": 0.08445465000113472,
+    "load_macros_elapsed": 0.660510757996235,
+    "parse_project_elapsed": 0.2927009239792824,
+    "patch_sources_elapsed": 0.000688611005898565,
+    "process_manifest_elapsed": 0.01930450100917369,
+    "load_all_elapsed": 1.117522154992912,
     "projects": [
         {
             "project_name": "nwt_cloudbridge",
-            "elapsed": 0.14050652197329327,
+            "elapsed": 0.14670571201713756,
             "parsers": [
                 {
                     "parser": "model",
-                    "elapsed": 0.09439553000265732,
+                    "elapsed": 0.09929091698722914,
                     "parsed_path_count": 29
                 },
                 {
                     "parser": "test",
-                    "elapsed": 0.011995234002824873,
+                    "elapsed": 0.012222473043948412,
                     "parsed_path_count": 2
                 },
                 {
                     "parser": "test",
-                    "elapsed": 0.02860431303270161,
+                    "elapsed": 0.02930930198635906,
                     "parsed_path_count": 2
                 }
             ],
@@ -36,17 +36,17 @@
         },
         {
             "project_name": "dbt_snowflake",
-            "elapsed": 0.004674997995607555,
+            "elapsed": 0.0038818229804746807,
             "parsers": [],
             "parsed_path_count": 0
         },
         {
             "project_name": "dbt",
-            "elapsed": 0.0037129699485376477,
+            "elapsed": 0.14191637991461903,
             "parsers": [
                 {
                     "parser": "doc",
-                    "elapsed": 0.00024090998340398073,
+                    "elapsed": 0.000249445962253958,
                     "parsed_path_count": 1
                 }
             ],
