@@ -5,8 +5,8 @@
     "static_analysis_parsed_path_count": 0,
     "is_partial_parse_enabled": true,
     "is_static_analysis_enabled": true,
-    "read_files_elapsed": 0.20204950199695304,
-    "load_all_elapsed": 0.23959728801855817,
+    "read_files_elapsed": 0.07832209597108886,
+    "load_all_elapsed": 0.10497134801698849,
     "projects": [
         {
             "project_name": "nwt_cloudbridge",
