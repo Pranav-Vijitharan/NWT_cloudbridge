@@ -15,12 +15,8 @@ SELECT
     te.TerritoryDescription,
     te.RegionID,
     r.RegionDescription,
-    e.HomePhone,
-    e.Extension,
-    e.Photo,
     e.Notes,
     e.ReportsTo,
-    e.PhotoPath,
     o.OrderID,
     o.OrderDate,
     o.RequiredDate,
@@ -31,13 +27,21 @@ SELECT
     o.ShipCity AS OrderShipCity,
     o.ShipRegion AS OrderShipRegion,
     o.ShipPostalCode AS OrderShipPostalCode,
-    o.ShipCountry AS OrderShipCountry
+    o.ShipCountry AS OrderShipCountry,
+    od.UnitPrice,
+	od.Quantity,
+	od.Discount,
+	od.NetPrice,
+	od.Revenue,
+	od.DiscountAmount
 FROM {{ ref('stg_orders') }} as o
-LEFT JOIN {{ ref('stg_employee') }} as e
+INNER JOIN {{ ref('stg_employee') }} as e
 ON e.EmployeeID = o.EmployeeID
-LEFT JOIN {{ ref('stg_employeeterritories') }} as et
+INNER JOIN {{ ref('stg_employeeterritories') }} as et
 ON e.EmployeeID = et.EmployeeID
-LEFT JOIN {{ ref('stg_territory') }} as te
+INNER JOIN {{ ref('stg_territory') }} as te
 ON te.TerritoryID = et.TerritoryID
-LEFT JOIN {{ ref('stg_region') }} as r
+INNER JOIN {{ ref('stg_region') }} as r
 ON r.RegionID = te.RegionID
+INNER JOIN {{ ref('stg_orderdetails') }} as od
+ON o.OrderID = od.OrderID
