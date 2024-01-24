@@ -5,30 +5,30 @@
     "static_analysis_parsed_path_count": 24,
     "is_partial_parse_enabled": true,
     "is_static_analysis_enabled": true,
-    "read_files_elapsed": 0.12411929498193786,
-    "load_macros_elapsed": 0.7451037319842726,
-    "parse_project_elapsed": 0.4950501429848373,
-    "patch_sources_elapsed": 0.0021495670080184937,
-    "process_manifest_elapsed": 0.021226194978225976,
-    "load_all_elapsed": 1.4461629139841534,
+    "read_files_elapsed": 0.09203677903860807,
+    "load_macros_elapsed": 0.6492781880078837,
+    "parse_project_elapsed": 0.2832313989638351,
+    "patch_sources_elapsed": 0.0006867580232210457,
+    "process_manifest_elapsed": 0.019455636967904866,
+    "load_all_elapsed": 1.102342199999839,
     "projects": [
         {
             "project_name": "nwt_cloudbridge",
-            "elapsed": 0.48653850302798674,
+            "elapsed": 0.2751147060189396,
             "parsers": [
                 {
                     "parser": "model",
-                    "elapsed": 0.21076199400704354,
+                    "elapsed": 0.22862922999775037,
                     "parsed_path_count": 29
                 },
                 {
                     "parser": "test",
-                    "elapsed": 0.08192283904645592,
+                    "elapsed": 0.011034723022021353,
                     "parsed_path_count": 2
                 },
                 {
                     "parser": "test",
-                    "elapsed": 0.1885361109743826,
+                    "elapsed": 0.029256145004183054,
                     "parsed_path_count": 2
                 }
             ],
@@ -36,17 +36,17 @@
         },
         {
             "project_name": "dbt_snowflake",
-            "elapsed": 0.003735518956091255,
+            "elapsed": 0.0034373910166323185,
             "parsers": [],
             "parsed_path_count": 0
         },
         {
             "project_name": "dbt",
-            "elapsed": 0.004514226980973035,
+            "elapsed": 0.0045012939954176545,
             "parsers": [
                 {
                     "parser": "doc",
-                    "elapsed": 0.0002450699685141444,
+                    "elapsed": 0.00023728597443550825,
                     "parsed_path_count": 1
                 }
             ],
