@@ -25,7 +25,7 @@ od.DISCOUNT,
 od.DISCOUNTAMOUNT,
 od.NETPRICE,
 od.REVENUE,
-{{ calculate_profit('o', 'od', 'p') }},
+{{ calculate_profit('o', 'od', 'p') }}
 
 -- ORDERS CONNECTION
 FROM {{ref('stg_orders') }} AS o
