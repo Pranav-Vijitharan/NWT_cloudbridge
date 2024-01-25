@@ -1,4 +1,4 @@
 {{ config (materialized='view')}}
 
-select *
-from {{ ref ('raw_supplier') }}
+SELECT *
+FROM {{ ref ('raw_supplier') }}
