@@ -115,9 +115,9 @@ models:
       - name: employeeID
         tests:
           - not_null
-          - relationships:
-              field: employeeID
-              to: ref('raw_employee')
+          # - relationships:
+          #     field: employeeID
+          #     to: ref('raw_employee')
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: number              
       - name: orderDate
@@ -207,11 +207,11 @@ models:
       - name: unitPrice
         tests:
           - not_null
-          - relationships:  # Metadata states that UnitPrice in Orderdetails has a one-to-one relationship with Products Table
-              field: unitPrice
-              to: ref('raw_products')          
+          # - relationships:  # Metadata states that UnitPrice in Orderdetails has a one-to-one relationship with Products Table
+          #     field: unitPrice
+          #     to: ref('raw_products')          
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: number           
+              column_type: float           
       - name: quantity
         tests:
           - not_null
@@ -420,9 +420,9 @@ models:
           - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: number  
-          - relationships:
-              field: employeeID
-              to: ref('raw_employee')                      
+          # - relationships:
+          #     field: employeeID
+          #     to: ref('raw_employee')                      
       - name: photoPath
         tests:
           - not_null

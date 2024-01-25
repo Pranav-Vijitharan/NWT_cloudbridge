@@ -1,72 +1,61 @@
 {
-    "path_count": 336,
-    "parsed_path_count": 336,
-    "static_analysis_path_count": 29,
-    "static_analysis_parsed_path_count": 23,
+    "path_count": 335,
+    "parsed_path_count": 3,
+    "static_analysis_path_count": 2,
+    "static_analysis_parsed_path_count": 1,
     "is_partial_parse_enabled": true,
     "is_static_analysis_enabled": true,
-    "read_files_elapsed": 0.5877428480307572,
-    "load_macros_elapsed": 1.1611605489742942,
-    "parse_project_elapsed": 0.802353180013597,
-    "patch_sources_elapsed": 0.0006673979805782437,
-    "process_manifest_elapsed": 0.03957922599511221,
-    "load_all_elapsed": 2.6976748119923286,
+    "read_files_elapsed": 0.8651890989858657,
+    "load_macros_elapsed": 0.0011430659797042608,
+    "parse_project_elapsed": 0.17952443100512028,
+    "patch_sources_elapsed": 1.4088989701122046e-05,
+    "process_manifest_elapsed": 0.002840179018676281,
+    "load_all_elapsed": 1.1914867289597169,
     "projects": [
         {
             "project_name": "nwt_cloudbridge",
-            "elapsed": 0.660819546028506,
+            "elapsed": 0.17927262297598645,
             "parsers": [
                 {
                     "parser": "model",
-                    "elapsed": 0.10106369497952983,
-                    "parsed_path_count": 29
-                },
-                {
-                    "parser": "test",
-                    "elapsed": 0.013569263042882085,
+                    "elapsed": 0.015308570000343025,
                     "parsed_path_count": 2
                 },
                 {
                     "parser": "test",
-                    "elapsed": 0.5378423369838856,
-                    "parsed_path_count": 2
+                    "elapsed": 0.16395423299400136,
+                    "parsed_path_count": 1
                 }
             ],
-            "parsed_path_count": 33
+            "parsed_path_count": 3
         },
         {
             "project_name": "dbt_snowflake",
-            "elapsed": 0.11173662100918591,
+            "elapsed": 0.0,
             "parsers": [],
             "parsed_path_count": 0
         },
         {
             "project_name": "dbt",
-            "elapsed": 0.006173540954478085,
-            "parsers": [
-                {
-                    "parser": "doc",
-                    "elapsed": 0.0002600009902380407,
-                    "parsed_path_count": 1
-                }
-            ],
-            "parsed_path_count": 1
+            "elapsed": 0.0,
+            "parsers": [],
+            "parsed_path_count": 0
         },
         {
             "project_name": "dbt_expectations",
-            "elapsed": 0.007278813049197197,
+            "elapsed": 0.0,
             "parsers": [],
             "parsed_path_count": 0
         },
         {
             "project_name": "dbt_utils",
-            "elapsed": 0.008268274017609656,
+            "elapsed": 0.0,
             "parsers": [],
             "parsed_path_count": 0
         },
         {
             "project_name": "dbt_date",
-            "elapsed": 0.007824904983863235,
+            "elapsed": 0.0,
             "parsers": [],
             "parsed_path_count": 0
         }
