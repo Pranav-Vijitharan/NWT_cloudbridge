@@ -1,18 +1,28 @@
 {
     "path_count": 165,
-    "parsed_path_count": 0,
-    "static_analysis_path_count": 0,
+    "parsed_path_count": 1,
+    "static_analysis_path_count": 1,
     "static_analysis_parsed_path_count": 0,
     "is_partial_parse_enabled": true,
     "is_static_analysis_enabled": true,
-    "read_files_elapsed": 0.07716843800153583,
-    "load_all_elapsed": 0.10502790799364448,
+    "read_files_elapsed": 0.10476844798540697,
+    "load_macros_elapsed": 0.0006382620194926858,
+    "parse_project_elapsed": 0.12744917400414124,
+    "patch_sources_elapsed": 1.8552003894001245e-05,
+    "process_manifest_elapsed": 0.0003690830199047923,
+    "load_all_elapsed": 0.4327059100032784,
     "projects": [
         {
             "project_name": "nwt_cloudbridge",
-            "elapsed": 0.0,
-            "parsers": [],
-            "parsed_path_count": 0
+            "elapsed": 0.12728763202903792,
+            "parsers": [
+                {
+                    "parser": "model",
+                    "elapsed": 0.1272787869675085,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 1
         },
         {
             "project_name": "dbt_snowflake",

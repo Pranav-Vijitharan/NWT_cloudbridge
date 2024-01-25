@@ -1,0 +1,7 @@
+
+
+SELECT *
+FROM NWT_DATA_GRP1.ADO_GRP1_ASG2.fresh_orderdetails
+
+WHERE CAST(orderID AS BIGINT) > (SELECT MAX(CAST(orderID AS BIGINT)) 
+FROM NWT_DATA_GRP1.ADO_GRP1_ASG2.raw_orderdetails)
