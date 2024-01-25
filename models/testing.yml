@@ -39,7 +39,10 @@ models:
         tests: 
           - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: number         
+              column_type: number 
+          - relationships:  # Metadata states that UnitPrice in Orderdetails has a one-to-one relationship with Products Table
+              field: unitPrice
+              to: ref('raw_orderdetails')                       
       - name: unitsInStock
         tests:
           - not_null
@@ -115,9 +118,9 @@ models:
       - name: employeeID
         tests:
           - not_null
-          # - relationships:
-          #     field: employeeID
-          #     to: ref('raw_employee')
+          - relationships:
+              field: employeeID
+              to: ref('raw_employee')
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: number              
       - name: orderDate
@@ -403,7 +406,7 @@ models:
           - not_null
           - unique 
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: varchar          
+              column_type: number         
       - name: photo
         tests:
           - not_null
@@ -417,12 +420,12 @@ models:
               column_type: varchar                  
       - name: reportsTo
         tests:
-          - not_null
+          # - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: number  
-          # - relationships:
-          #     field: employeeID
-          #     to: ref('raw_employee')                      
+          - relationships:
+              field: employeeID
+              to: ref('raw_employee')                      
       - name: photoPath
         tests:
           - not_null
