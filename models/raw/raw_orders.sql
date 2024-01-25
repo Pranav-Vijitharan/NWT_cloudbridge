@@ -12,8 +12,8 @@ SELECT
     shipName,
     shipAddress,
     shipCity,
-    REPLACE(shipRegion, 'NULL', NULL) AS shipRegion,
-    REPLACE(shipPostalCode, 'NULL', NULL) AS shipPostalCode,
+    REPLACE(shipRegion, 'None', '') AS shipRegion,
+    REPLACE(shipPostalCode, 'None', '') AS shipPostalCode,
     shipCountry
 FROM {{ ref ('fresh_orders') }}
 {% if is_incremental() %}
