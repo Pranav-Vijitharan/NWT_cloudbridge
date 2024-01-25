@@ -17,7 +17,10 @@ SELECT
     extension,
     photo,
     notes,
-    REPLACE(reportsTo, 'NULL', '') AS reportsTo,
+    CASE 
+        WHEN REPLACE(reportsTo, 'NULL', '') = '' THEN NULL
+        ELSE CAST(REPLACE(reportsTo, 'NULL', '') AS INT)
+    END AS reportsTo,
     photoPath
 FROM 
 NWT_DATA_GRP1.ADO_GRP1_ASG2.employee
