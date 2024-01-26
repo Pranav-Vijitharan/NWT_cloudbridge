@@ -9,13 +9,11 @@ SELECT
     e.Address AS EmployeeAddress,
     e.City AS EmployeeCity,
     e.Region AS EmployeeRegion,
-    e.PostalCode AS EmployeePostalCode,
     e.Country AS EmployeeCountry,
-    et.TerritoryID,
-    te.TerritoryDescription,
-    te.RegionID,
-    r.RegionDescription,
-    e.Notes,
+    -- et.TerritoryID,
+    -- te.TerritoryDescription,
+    -- te.RegionID,
+    -- r.RegionDescription,
     e.ReportsTo,
     o.OrderID,
     o.OrderDate,
@@ -34,12 +32,12 @@ SELECT
 FROM {{ ref('stg_orders') }} as o
 INNER JOIN {{ ref('stg_employee') }} as e
 ON e.EmployeeID = o.EmployeeID
-INNER JOIN {{ ref('stg_employeeterritories') }} as et
-ON e.EmployeeID = et.EmployeeID
-INNER JOIN {{ ref('stg_territory') }} as te
-ON te.TerritoryID = et.TerritoryID
-INNER JOIN {{ ref('stg_region') }} as r
-ON r.RegionID = te.RegionID
+-- INNER JOIN {{ ref('stg_employeeterritories') }} as et
+-- ON e.EmployeeID = et.EmployeeID
+-- INNER JOIN {{ ref('stg_territory') }} as te
+-- ON te.TerritoryID = et.TerritoryID
+-- INNER JOIN {{ ref('stg_region') }} as r
+-- ON r.RegionID = te.RegionID
 INNER JOIN {{ ref('stg_orderdetails') }} as od
 ON o.OrderID = od.OrderID
 INNER JOIN {{ ref('stg_products') }} AS p
