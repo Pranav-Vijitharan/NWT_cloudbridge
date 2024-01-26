@@ -21,6 +21,10 @@ select
     p.unitsOnOrder,
     p.totalOrderValue,
     p.totalOrderCost,
+--category
+    c.Categoryname,
+    c.description,
+    c.picture,
 --shippertable
     sh.Shipperid,
     sh.Companyname as Shippedvia,
@@ -40,9 +44,12 @@ select
 from {{ ref('stg_supplier') }} as s
 left join {{ ref('stg_products')}} as p
 on s.Supplierid=p.Supplierid
+left join {{ref('stg_category')}} as c
+on c.Categoryid=p.Categoryid
 left join {{ ref('stg_orderdetails')}} as od
 on p.Productid=od.Productid
 left join {{ref('stg_orders')}} as o
 on o.Orderid=od.Orderid
 left join {{ref('stg_shipper')}} as sh
 on o.Shipvia=sh.Shipperid
+
