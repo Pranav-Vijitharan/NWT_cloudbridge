@@ -9,17 +9,19 @@ c.country,
 c.region,
 c.city,
 o.freight,
-o.ontimestatus,
-o.shippingdelay,
-o.shippingtime,
+o.onTimeStatus,
+o.shippingDelay,
+o.shippingTime,
 o.orderDate,
 s.companyName AS shippingCompanyName,
-od.revenue,
+od.grossSales,
+od.netSales,
 od.quantity,
 od.discountAmount,
-od.netPrice,
 p.productName,
-ca.categoryName
+ca.categoryName,
+{{ profit_profitmargin('o', 'od', 'p') }}
+
 FROM {{ ref('stg_customer') }} AS c
 INNER JOIN {{ ref('stg_orders') }} AS o ON c.customerID = o.customerID
 INNER JOIN {{ ref('stg_shipper') }} AS s ON o.shipVia = s.shipperID
