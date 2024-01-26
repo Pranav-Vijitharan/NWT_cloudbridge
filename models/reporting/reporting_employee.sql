@@ -21,19 +21,16 @@ SELECT
     o.OrderDate,
     o.RequiredDate,
     o.ShippedDate,
-    o.Freight,
-    o.ShipName,
-    o.ShipAddress AS OrderShipAddress,
-    o.ShipCity AS OrderShipCity,
-    o.ShipRegion AS OrderShipRegion,
-    o.ShipPostalCode AS OrderShipPostalCode,
     o.ShipCountry AS OrderShipCountry,
     od.UnitPrice,
 	od.Quantity,
 	od.Discount,
-	od.NetPrice,
-	od.Revenue,
-	od.DiscountAmount
+	od.GrossSales,
+	od.DiscountAmount,
+    cat.categoryName,
+    cat.description AS categoryDescription,
+    {{ profit_profitmargin('o', 'od', 'p') }} -- Macro to calculate profit & profit margin
+
 FROM {{ ref('stg_orders') }} as o
 INNER JOIN {{ ref('stg_employee') }} as e
 ON e.EmployeeID = o.EmployeeID
@@ -45,3 +42,7 @@ INNER JOIN {{ ref('stg_region') }} as r
 ON r.RegionID = te.RegionID
 INNER JOIN {{ ref('stg_orderdetails') }} as od
 ON o.OrderID = od.OrderID
+INNER JOIN {{ ref('stg_products') }} AS p
+ON od.productID = p.productID
+INNER JOIN {{ ref('stg_category') }} AS cat 
+ON p.categoryID = cat.categoryID

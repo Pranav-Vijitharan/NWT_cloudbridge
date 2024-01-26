@@ -6,26 +6,20 @@ od.productID,
 od.unitPrice,
 quantity,
 discount,
-netPrice,
-revenue,
+grossSales,
 discountAmount,
+netSales,
 
 --from orders
 
 orderDate,
 requiredDate,
 shippedDate,
-shipVia,
 freight,
-shipName,
 shipCity AS city,
 shipRegion AS region,
 shipCountry AS country,
-onTimeStatus,
-orderDuration,
-shippingDelay,
-shippingTime,
-{{ calculate_profit('o', 'od', 'p') }}, -- Macro to calculate profit
+{{ profit_profitmargin('o', 'od', 'p') }}, -- Macro to calculate profit & profit margin
 
 
 --from products
@@ -40,14 +34,16 @@ discontinued,
 unitCost,
 totalStockValue,
 totalOrderValue,
-totalValue,
+totalProductInventoryValue,
+totalStockCost,
+totalOrderCost,
+totalProductInventoryCost,
 reorderCheck,
 
 --from category
 
 categoryName,
 description AS categoryDescription,
-picture AS categoryPicture,
 
 -- from supplier
 
