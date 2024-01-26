@@ -1,9 +1,11 @@
-{% macro calculate_profit(o, od, p) %}
+{% macro profit_profitmargin(o, od, p) %}
+
   (
-    ({{ od }}.REVENUE - {{ od }}.DISCOUNTAMOUNT - {{ o }}.FREIGHT - {{ p }}.UNITCOST)
+    ROUND({{od}}.netsales - ({{p}}.unitcost * {{od}}.quantity),2)
   ) AS profit,
+
   (
-    ({{ od }}.REVENUE - {{ od }}.DISCOUNTAMOUNT - {{ o }}.FREIGHT - {{ p }}.UNITCOST) /
-    NULLIF({{ od }}.REVENUE, 0) * 100
+    ROUND((({{od}}.netsales - ({{p}}.unitcost * {{od}}.quantity))/{{od}}.netsales) * 100, 2)
   ) AS profitMargin
+
 {% endmacro %}

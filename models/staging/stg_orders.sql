@@ -12,13 +12,12 @@ WITH ShipmentStatus AS (
 )
 
 SELECT *,
-    CASE WHEN shippedDate IS NOT NULL THEN DATEDIFF('day', orderDate, shippedDate) END AS OrderDuration,
+    CASE WHEN shippedDate IS NOT NULL THEN DATEDIFF('day', orderDate, shippedDate) END AS ShippingTime,
     CASE 
         WHEN shippedDate IS NOT NULL THEN 
             CASE 
                 WHEN DATEDIFF('day', requiredDate, shippedDate) < 0 THEN 0 
                 ELSE DATEDIFF('day', requiredDate, shippedDate) 
             END 
-    END AS shippingDelay,
-    CASE WHEN shippedDate IS NOT NULL THEN DATEDIFF('day', orderDate, requiredDate) END AS shippingTime
+    END AS shippingDelay
 FROM ShipmentStatus

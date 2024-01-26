@@ -1,10 +1,6 @@
 {{ config(materialized = 'table') }}
 
 SELECT
--- Profit column
--- (od.REVENUE - od.DISCOUNTAMOUNT - o.FREIGHT - p.UNITCOST) AS profit,
--- (od.REVENUE - od.DISCOUNTAMOUNT - o.FREIGHT - p.UNITCOST) / od.REVENUE * 100 AS profitMargin,
-
 o.ORDERID,
 p.PRODUCTID,
 cust.CUSTOMERID,
@@ -19,13 +15,13 @@ p.PRODUCTNAME,
 p.UNITPRICE,
 p.DISCONTINUED,
 p.TOTALVALUE,
-o.FREIGHT,
+od.NETSALES,
+p.UNITCOST,
 od.QUANTITY,
 od.DISCOUNT,
 od.DISCOUNTAMOUNT,
-od.NETPRICE,
-od.REVENUE,
-{{ calculate_profit('o', 'od', 'p') }}
+od.GROSSSALES,
+{{ profit_profitmargin('o', 'od', 'p') }}
 
 -- ORDERS CONNECTION
 FROM {{ref('stg_orders') }} AS o
