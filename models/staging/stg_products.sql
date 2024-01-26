@@ -8,7 +8,7 @@ SELECT *,
     unitsOnOrder * unitPrice AS totalOrderValue,
 
     -- 3. TotalValue
-    totalStockValue + totalOrderValue AS totalValue,
+    totalStockValue + totalOrderValue AS totalProductInventoryValue,
 
     -- 4. TotalStockCost
     unitsInStock * unitCost AS totalStockCost,
