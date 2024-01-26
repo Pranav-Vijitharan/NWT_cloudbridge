@@ -9,14 +9,16 @@ SELECT *,
 
     -- 3. TotalValue
     totalStockValue + totalOrderValue AS totalValue,
+
     -- 4. TotalStockCost
-    unitsInStock * unitCost AS TotalStockCost,
+    unitsInStock * unitCost AS totalStockCost,
 
     -- 5. TotalOrderCost
     unitsOnOrder * unitCost AS totalOrderCost,
 
     -- 6. TotalCost
-    totalStockCost + totalOrderCost AS totalCost,
+    totalStockCost + totalOrderCost AS totalProductInventoryCost,
+    
     -- 7. ReorderCheck
     CASE
         WHEN unitsInStock <= reorderLevel THEN TRUE
