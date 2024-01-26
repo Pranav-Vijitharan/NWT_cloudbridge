@@ -7,11 +7,11 @@ SELECT
     contactTitle,
     address,
     city,
-    REPLACE(region, 'NULL', NULL) AS region,
+    REPLACE(region, 'NULL', '') AS region,
     postalcode,
     country,
     phone,
-    REPLACE(fax, 'NULL', NULL) AS fax,
-    REPLACE(homePage, 'NULL', NULL) AS homePage
+    REPLACE(fax, 'NULL', '') AS fax,
+    REPLACE(homePage, 'NULL', '') AS homePage
 FROM 
 NWT_DATA_GRP1.ADO_GRP1_ASG2.SUPPLIER
