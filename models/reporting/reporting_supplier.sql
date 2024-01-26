@@ -12,6 +12,7 @@ select
     s.Phone as Supplier_phone,
 --orderdetails
     od.Productid,
+    p.productName,
     od.Orderid,
     od.netsales,
     od.quantity,
