@@ -41,7 +41,6 @@ unitCost,
 totalStockValue,
 totalOrderValue,
 totalValue,
-valuePerUnit,
 reorderCheck,
 
 --from category

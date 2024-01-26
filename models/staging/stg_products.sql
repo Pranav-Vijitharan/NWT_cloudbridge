@@ -10,13 +10,7 @@ SELECT *,
     -- 3. TotalValue
     totalStockValue + totalOrderValue AS totalValue,
 
-    -- 4. ValuePerUnit
-    CASE
-        WHEN unitsInStock + unitsOnOrder = 0 THEN 0 -- Check for division by zero
-        ELSE totalValue / (unitsInStock + unitsOnOrder)
-    END AS valuePerUnit,
-
-    -- 5. ReorderCheck
+    -- 4. ReorderCheck
     CASE
         WHEN unitsInStock <= reorderLevel THEN TRUE
         ELSE FALSE
