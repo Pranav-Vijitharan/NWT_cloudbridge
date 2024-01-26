@@ -22,6 +22,7 @@ select
     p.unitsOnOrder,
     p.totalOrderValue,
     p.totalOrderCost,
+    p.discontinued,
 --category
     c.Categoryname,
     c.description,
