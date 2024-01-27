@@ -1,5 +1,5 @@
 {{ config (materialized='table')}}
 
-Select *
-From 
+SELECT *
+FROM 
 NWT_DATA_GRP1.ADO_GRP1_ASG2.employeeterritories
